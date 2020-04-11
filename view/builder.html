@@ -1,0 +1,195 @@
+<!-- TODO: Do not allow entries not clicked from the list to be allowed -->
+<div class="row">
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 1 -->
+				<div angucomplete-alt id="skill1" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[0]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 2 -->
+				<div angucomplete-alt id="skill2" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[1]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 3 -->
+				<div angucomplete-alt id="skill3" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[2]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 4 -->
+				<div angucomplete-alt id="skill4" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[3]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 5 -->
+				<div angucomplete-alt id="skill5" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[4]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 6 -->
+				<div angucomplete-alt id="skill6" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[5]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 7 -->
+				<div angucomplete-alt id="skill7" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[6]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Skill 8 -->
+				<div angucomplete-alt id="skill8" placeholder="Search skills" maxlength="50" pause="100"
+					selected-object="inputSkills[7]" local-data="skillNames" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="ui search">
+		<div class="ui input">
+			<!-- Max Level -->
+			<!-- TODO: do not allow anything other than a number to be entered here -->
+			<input type="text" size="30" ng-model="maxLevel" autocorrect="off" autocomplete="off"
+				placeholder="Max Level (Default 99)" spellcheck="false">
+		</div>
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Preferred Persona -->
+				<!-- TODO: Do not allow entries not clicked from the list to be allowed -->
+				<div angucomplete-alt id="targetPersona" placeholder="Persona (Optional)" maxlength="50" pause="100"
+					selected-object="targetPersona" local-data="customStandardPersonaeNames" search-fields="name" title-field="name"
+					minlength="1" input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="ui celled striped structured table">
+	<tbody>
+		<tr>
+			<td class="center aligned">{{inputSkills[0].originalObject.name}}</td>
+			<td class="center aligned">{{inputSkills[1].originalObject.name}}</td>
+		</tr>
+		<tr>
+			<td class="center aligned">{{inputSkills[2].originalObject.name}}</td>
+			<td class="center aligned">{{inputSkills[3].originalObject.name}}</td>
+		</tr>
+		<tr>
+			<td class="center aligned">{{inputSkills[4].originalObject.name}}</td>
+			<td class="center aligned">{{inputSkills[5].originalObject.name}}</td>
+		</tr>
+		<tr>
+			<td class="center aligned">{{inputSkills[6].originalObject.name}}</td>
+			<td class="center aligned">{{inputSkills[7].originalObject.name}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<button id="buildButton" class="ui button" ng-click="build()">Build</button>
+<button id="resetButton" class="ui button" ng-click="clearInput()">Reset</button>
+
+<table id="list" cellspacing="0" class="ui table striped sortable unstackable" sticky-table>
+	<thead>
+		<tr>
+			<th><a ng-click="sortBy = 'level'; sortReverse = !sortReverse">Level</a></th>
+			<th><a ng-click="sortBy = 'name'; sortReverse = !sortReverse">Name</a></th>
+			<th><a ng-click="sortBy = 'arcana'; sortReverse = !sortReverse">Arcana</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'strength'; sortReverse = !sortReverse">Strength</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'magic'; sortReverse = !sortReverse">Magic</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'endurance'; sortReverse = !sortReverse">Endurance</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'agility'; sortReverse = !sortReverse">Agility</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'luck'; sortReverse = !sortReverse">Luck</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'physicalValue'; sortReverse = !sortReverse">Physical</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'gunValue'; sortReverse = !sortReverse">Gun</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'fireValue'; sortReverse = !sortReverse">Fire</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'iceValue'; sortReverse = !sortReverse">Ice</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'electricValue'; sortReverse = !sortReverse">Electric</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'windValue'; sortReverse = !sortReverse">Wind</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'psychicValue'; sortReverse = !sortReverse">Psychic</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'nuclearValue'; sortReverse = !sortReverse">Nuclear</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'blessValue'; sortReverse = !sortReverse">Bless</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'curseValue'; sortReverse = !sortReverse">Curse</a></th>
+			<th class="mobile-hidden"><a ng-click="sortBy = 'fusionNum'; sortReverse = !sortReverse"># of Fusions</a></th>
+		</tr>
+	</thead>
+	<tbody>
+		</tr>
+		<tr ng-repeat="child in children | orderBy:sortFunc:sortReverse | filter:filterStr">
+			<td>{{child.level}}</td>
+			<td class="left-border">
+				<a class="chain-name" href='#/fusionChain/{{child.name}}'>{{child.name}}</a>
+				<span class="dlc-label" ng-if="child.dlc">DLC</span>
+			</td>
+			<td class="left-border">{{child.arcana}}</td>
+
+			<td class="mobile-hidden left-border">{{child.strength}}</td>
+			<td class="mobile-hidden">{{child.magic}}</td>
+			<td class="mobile-hidden">{{child.endurance}}</td>
+			<td class="mobile-hidden">{{child.agility}}</td>
+			<td class="mobile-hidden">{{child.luck}}</td>
+			<td class="mobile-hidden left-border {{child.physical}}">{{child.physical}}</td>
+			<td class="mobile-hidden {{child.gun}}">{{child.gun}}</td>
+			<td class="mobile-hidden {{child.fire}}">{{child.fire}}</td>
+			<td class="mobile-hidden {{child.ice}}">{{child.ice}}</td>
+			<td class="mobile-hidden {{child.electric}}">{{child.electric}}</td>
+			<td class="mobile-hidden {{child.wind}}">{{child.wind}}</td>
+			<td class="mobile-hidden {{child.psychic}}">{{child.psychic}}</td>
+			<td class="mobile-hidden {{child.nuclear}}">{{child.nuclear}}</td>
+			<td class="mobile-hidden {{child.bless}}">{{child.bless}}</td>
+			<td class="mobile-hidden {{child.curse}}">{{child.curse}}</td>
+			<td class="mobile-hidden {{child.fusionNum}}">{{child.fusionNum}}</td>
+		</tr>
+	</tbody>
+</table>

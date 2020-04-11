@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+#list th, #skillList th {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#list td, #list td:hover {
+    border-width: 0;
+}
+
+#list tr:hover td {
+    background: rgba(64, 46, 24, 0.1);
+}
+
+#skillList tr:hover td {
+    background: rgba(64, 46, 24, 0.1);
+}
+
+tr:hover td:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+tr:hover td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination span {
+    cursor: pointer;
+}
+
+#content {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.infoTable, .infoTable th {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.infoTable, .recipesTable, #skillList {
+    margin: 0 auto;
+}
+
+.recipesTable {
+    text-align: left;
+}
+
+.recipesTable td, .recipesTable th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.infoTable th, .infoTable td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.caption {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#skillList {
+    text-align: left;
+}
+
+#skillList th, #skillList td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media screen and (min-width: 1080px) {
+    #skillList {
+        width: 80%;
+    }
+}
+
+.ui.sortable.table thead th:hover {
+    background: white !important;
+}
+
+.wk, .rs, .nu, .rp, .ab,
+.Weak, .Resist, .Null, .Repel, .Absorb {
+    font-weight: bold;
+}
+
+.wk, .Weak { color: #db2828 !important; }
+.rs, .Resist { color: #2185d0 !important; }
+.nu, .Null { color: #b0b0b0 !important; }
+.rp, .Repel { color: #fbbd08 !important; }
+.ab, .Absorb { color: #21ba45 !important; }
+
+.left-border {
+    border-left: 1px solid rgba(34,36,38,.1) !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .desktop-hidden {
+        display: none;
+    }
+}
+
+.warning-sign {
+    font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
+    font-size: small;
+}
+
+.dlc-label {
+    background-color: #f0ad4e;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-left: 5px;
+}
+
+.persona-name {
+    vertical-align: inherit;
+}
+
+.col {
+	padding: .2em .6em .3em;
+}
+
+.row:after {
+	display: table;
+}

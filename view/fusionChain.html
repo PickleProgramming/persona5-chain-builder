@@ -1,0 +1,136 @@
+<h2>{{persona.name}} ({{persona.level}} / {{persona.arcana}})</h2>
+
+<div ng:show='persona.max || persona.item || persona.rare || persona.note || persona.dlc'>
+	<h3>Note</h3>
+	<span style='color: red;' ng:show='persona.max'>Social link must be maxed!</span>
+	<span style='color: slateblue;' ng:show='persona.item'>Requires an item from one of Elizabeth's requests!</span>
+	<span style='color: slateblue;' ng:show='persona.rare'>This is a rare persona and cannot be fused!</span>
+	<span style='color: slateblue;' ng:show='persona.note'>{{persona.note}}</span>
+	<span style='color: slateblue;' ng:show='persona.dlc'>This is a DLC persona!</span>
+</div>
+
+<h3>Skills</h3>
+<table id="skillTable" class="ui table unstackable striped">
+	<thead>
+		<tr>
+			<th>Level</th>
+			<th>Type</th>
+			<th>Name</th>
+			<th>Effect</th>
+			<th>Cost</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng:repeat="skill in persona.skillList track by $index">
+			<td>{{skill.level}}</td>
+			<td>{{skill.elem}}</td>
+			<td>
+				<a href="#/skill/{{skill.name}}">{{skill.name}}</a>
+				<span class="dlc-label" ng-if="skill.unique">Unique</span>
+			</td>
+			<td>{{skill.description}}</td>
+			<td>{{skill.cost}}</td>
+		</tr>
+		<tr ng:repeat="skill in inheritedSkills">
+			<td>Inherited</td>
+			<td>{{skill.elemDisplay}}</td>
+			<td>
+				<a href="#/skill/{{skill.name}}">{{skill.name}}</a>
+				<span class="dlc-label" ng-if="skill.unique">Unique</span>
+			</td>
+			<td>{{skill.effect}}</td>
+			<td>{{skill.costDisplay}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Fusion Chain</h2>
+<table id="fusions" class="ui table celled unstackable striped">
+	<thead>
+		<tr>
+			<!-- TODO: this isn't gonna work for special fusions with 3+ personae -->
+			<th class="center aligned">Persona 1</th>
+			<th class="center aligned">Persona 2</th>
+			<th class="center aligned">Result</th>
+			<th class="center aligned" colspan="4">Inherit</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng:repeat="link in chain">
+			<td ng:repeat="parent in link.parents">
+				<a href="#/persona/{{parent.name}}">{{parent.name}}</a>
+			</td>
+			<td>
+				<a href="#/persona/{{link.child.name}}">{{link.child.name}}</a>
+			</td>
+			<td colspan="4">
+				<table id="skillFusions" class="ui table celled unstackable striped">
+					<thead>
+						<th class="center aligned">Skill 1</th>
+						<th class="center aligned">Skill 2</th>
+						<th class="center aligned">Skill 3</th>
+						<th class="center aligned">Skill 4</th>
+					</thead>
+					<tbody>
+						<td ng:repeat="skillName in link.inheritance">{{skillName}}</td>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Stats</h3>
+<table id="statsTable" class="ui table celled unstackable striped">
+	<thead>
+		<tr>
+			<th ng:repeat="s in persona.statsHeader" class="center aligned">{{s}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td ng:repeat="i in persona.stats track by $index" class="center aligned" >{{i}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Elementals</h3>
+<table class="ui table unstackable striped mobile-hidden">
+	<thead>
+		<tr>
+			<th ng:repeat="s in persona.elemsHeader" class="center aligned">{{s}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td ng:repeat="s in persona.elems track by $index" class="{{s}}">{{s}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<!--split the table into 2 for mobile-->
+<table class="ui table unstackable striped desktop-hidden">
+	<thead>
+		<tr>
+			<th ng:repeat="s in persona.elemsHeader1">{{s}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td ng:repeat="s in persona.elems1 track by $index" class="{{s}}">{{s}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="ui table unstackable striped desktop-hidden">
+	<thead>
+		<tr>
+			<th ng:repeat="s in persona.elemsHeader2">{{s}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td ng:repeat="s in persona.elems2 track by $index" class="{{s}}">{{s}}</td>
+		</tr>
+	</tbody>
+</table>
