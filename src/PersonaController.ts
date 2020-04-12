@@ -1,7 +1,4 @@
 ///<reference path="FusionCalculator.ts"/>
-///<reference path="../data/PersonaData.ts"/>
-///<reference path="../data/SkillData.ts"/>
-
 /**
  * Created by Chin on 08-Apr-17.
  */

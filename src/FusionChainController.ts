@@ -1,6 +1,3 @@
-///<reference path="../data/PersonaData.ts"/>
-///<reference path="../data/SkillData.ts"/>
-
 /**
  * Created by PickleProgramming on 05-Apr-20
  */

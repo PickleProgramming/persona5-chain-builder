@@ -1,6 +1,6 @@
 ///<reference path="PersonaBuilder.ts"/>
-///<reference path="../data/PersonaData.ts"/>
 ///<reference path="App.ts"/>
+///<reference path="Compendium.ts"/>
 
 /**
  * TODO: Refactor to ChainBuilder or something like that
