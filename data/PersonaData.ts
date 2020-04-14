@@ -1,7 +1,5 @@
 // derived partly from https://github.com/aqiu384/aqiu384.github.io/blob/master/p5-tool/js/full_compendium.js
 
-//TODO: Apply inheritance types to this dataset from royal
-
 interface PersonaMap {
 	[index: string]: PersonaData;
 }
@@ -24,7 +22,7 @@ interface PersonaData {
 	uniqueSkills?: string[];
 
 	// from new data for p5r
-	inherits?: string;
+	inherits: string;
 	item?: string;
 	itemr?: string;
 	trait?: string;
@@ -62,6 +60,7 @@ interface PersonaData {
 
 const personaMap: PersonaMap = {
 	"Abaddon": {
+		"inherits": "curse",
 		"arcana": "Judgement",
 		"level": 74,
 		"stats": [51, 38, 58, 43, 39],
@@ -74,8 +73,10 @@ const personaMap: PersonaMap = {
 			"Spirit Drain": 0,
 			"Survival Trick": 77
 		}
+		
 	},
 	"Agathion": {
+		"inherits": "elec",
 		"arcana": "Chariot",
 		"level": 3,
 		"stats": [3, 4, 5, 7, 3],
@@ -84,6 +85,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Alice": {
+		"inherits": "curse",
 		"arcana": "Death",
 		"level": 79,
 		"stats": [43, 59, 40, 57, 45],
@@ -102,6 +104,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Die For Me!"]
 	},
 	"Ame-no-Uzume": {
+		"inherits": "almighty",
 		"arcana": "Lovers",
 		"level": 29,
 		"stats": [15, 22, 19, 20, 18],
@@ -109,6 +112,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Bufula": 0, "Diarama": 0, "Divine Grace": 32, "Mazio": 0, "Shock Boost": 34, "Tentarafoo": 31 }
 	},
 	"Ananta": {
+		"inherits": "nuke",
 		"arcana": "Star",
 		"level": 43,
 		"stats": [24, 30, 31, 26, 25],
@@ -125,6 +129,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Andras": {
+		"inherits": "ice",
 		"arcana": "Devil",
 		"level": 10,
 		"stats": [5, 9, 7, 10, 6],
@@ -133,6 +138,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Angel": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 12,
 		"stats": [7, 9, 9, 9, 9],
@@ -141,6 +147,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Anubis": {
+		"inherits": "almighty",
 		"arcana": "Judgement",
 		"level": 37,
 		"stats": [23, 26, 24, 22, 23],
@@ -157,6 +164,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Anzu": {
+		"inherits": "wind",
 		"arcana": "Hierophant",
 		"level": 25,
 		"stats": [14, 18, 15, 21, 14],
@@ -165,6 +173,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Apsaras": {
+		"inherits": "ice",
 		"arcana": "Priestess",
 		"level": 11,
 		"stats": [7, 11, 6, 10, 6],
@@ -173,6 +182,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Ara Mitama": {
+		"inherits": "nuke",
 		"arcana": "Chariot",
 		"level": 31,
 		"stats": [20, 19, 20, 20, 21],
@@ -180,6 +190,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Freila": 0, "Marakunda": 33, "Miracle Punch": 0, "Taunt": 0, "Rage Boost": 35, "Rebellion": 32 }
 	},
 	"Arahabaki": {
+		"inherits": "ailment",
 		"arcana": "Hermit",
 		"level": 35,
 		"stats": [21, 23, 22, 24, 22],
@@ -195,6 +206,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Archangel": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 16,
 		"stats": [13, 10, 13, 12, 7],
@@ -203,6 +215,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Ardha": {
+		"inherits": "almighty",
 		"arcana": "Temperance",
 		"level": 84,
 		"stats": [54, 56, 55, 54, 40],
@@ -220,6 +233,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Ariadne": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 30,
 		"stats": [23, 19, 20, 17, 18],
@@ -237,6 +251,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Beast Weaver"]
 	},
 	"Ariadne Picaro": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 42,
 		"stats": [36, 23, 29, 24, 21],
@@ -253,6 +268,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Arsene": {
+		"inherits": "curse",
 		"arcana": "Fool",
 		"level": 1,
 		"stats": [2, 2, 2, 3, 1],
@@ -260,6 +276,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Cleave": 2, "Adverse Resolve": 7, "Dream Needle": 5, "Eiha": 1, "Sukunda": 4 }
 	},
 	"Asterius": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 56,
 		"stats": [43, 43, 32, 32, 25],
@@ -277,6 +294,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Titanomachia"]
 	},
 	"Asterius Picaro": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 62,
 		"stats": [46, 46, 36, 36, 29],
@@ -293,6 +311,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Asura-Ou": {
+		"inherits": "nuke",
 		"arcana": "Sun",
 		"level": 76,
 		"stats": [52, 48, 51, 49, 35],
@@ -310,6 +329,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Atropos": {
+		"inherits": "elec",
 		"arcana": "Fortune",
 		"level": 39,
 		"stats": [23, 30, 22, 27, 22],
@@ -325,6 +345,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Attis": {
+		"inherits": "fire",
 		"arcana": "Hanged Man",
 		"level": 82,
 		"stats": [56, 50, 48, 51, 48],
@@ -341,6 +362,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Baal": {
+		"inherits": "wind",
 		"arcana": "Emperor",
 		"level": 75,
 		"stats": [48, 50, 47, 47, 40],
@@ -357,6 +379,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Ayamur"]
 	},
 	"Baphomet": {
+		"inherits": "almighty",
 		"arcana": "Devil",
 		"level": 58,
 		"stats": [34, 42, 36, 38, 31],
@@ -372,6 +395,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Barong": {
+		"inherits": "elec",
 		"arcana": "Emperor",
 		"level": 52,
 		"stats": [33, 35, 33, 37, 25],
@@ -386,6 +410,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Beelzebub": {
+		"inherits": "curse",
 		"arcana": "Devil",
 		"level": 84,
 		"stats": [55, 60, 54, 56, 34],
@@ -403,6 +428,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Belial": {
+		"inherits": "curse",
 		"arcana": "Devil",
 		"level": 68,
 		"stats": [45, 41, 46, 43, 36],
@@ -418,6 +444,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Belphegor": {
+		"inherits": "ice",
 		"arcana": "Tower",
 		"level": 37,
 		"stats": [25, 27, 24, 23, 19],
@@ -426,6 +453,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Berith": {
+		"inherits": "phys",
 		"arcana": "Hierophant",
 		"level": 9,
 		"stats": [8, 6, 7, 8, 5],
@@ -434,6 +462,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Bicorn": {
+		"inherits": "wind",
 		"arcana": "Hermit",
 		"level": 4,
 		"stats": [5, 3, 3, 5, 3],
@@ -442,6 +471,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Bishamonten": {
+		"inherits": "nuke",
 		"arcana": "Hierophant",
 		"level": 67,
 		"stats": [49, 37, 42, 45, 35],
@@ -457,6 +487,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Black Frost": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 67,
 		"stats": [44, 46, 41, 42, 35],
@@ -473,6 +504,7 @@ const personaMap: PersonaMap = {
 		"note": "Request \"One Who Bullies Bullies\" must be cleared"
 	},
 	"Black Ooze": {
+		"inherits": "curse",
 		"arcana": "Moon",
 		"level": 29,
 		"stats": [19, 18, 20, 16, 21],
@@ -489,6 +521,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Black Rider": {
+		"inherits": "curse",
 		"arcana": "Tower",
 		"level": 59,
 		"stats": [38, 43, 37, 45, 30],
@@ -504,6 +537,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Bugs": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 49,
 		"stats": [35, 33, 30, 32, 24],
@@ -521,6 +555,7 @@ const personaMap: PersonaMap = {
 		"note": "Request \"The Lovesick Cyberstalking Girl\" must be cleared"
 	},
 	"Byakko": {
+		"inherits": "ice",
 		"arcana": "Temperance",
 		"level": 49,
 		"stats": [32, 32, 31, 32, 27],
@@ -536,6 +571,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Cerberus": {
+		"inherits": "fire",
 		"arcana": "Chariot",
 		"level": 55,
 		"stats": [39, 35, 32, 39, 27],
@@ -551,6 +587,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Chernobog": {
+		"inherits": "ailment",
 		"arcana": "Death",
 		"level": 62,
 		"stats": [40, 37, 39, 38, 39],
@@ -566,6 +603,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Chi You": {
+		"inherits": "psy",
 		"arcana": "Chariot",
 		"level": 86,
 		"stats": [54, 56, 53, 52, 50],
@@ -583,6 +621,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Choronzon": {
+		"inherits": "curse",
 		"arcana": "Magician",
 		"level": 28,
 		"stats": [16, 19, 19, 18, 19],
@@ -600,6 +639,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Clotho": {
+		"inherits": "healing",
 		"arcana": "Fortune",
 		"level": 26,
 		"stats": [14, 19, 17, 20, 15],
@@ -615,6 +655,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Crystal Skull": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 50,
 		"stats": [50, 50, 50, 50, 50],
@@ -632,6 +673,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Cu Chulainn": {
+		"inherits": "almighty",
 		"arcana": "Star",
 		"level": 67,
 		"stats": [47, 36, 44, 47, 34],
@@ -647,6 +689,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Cybele": {
+		"inherits": "healing",
 		"arcana": "Priestess",
 		"level": 73,
 		"stats": [44, 48, 45, 51, 38],
@@ -663,6 +706,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Daisoujou": {
+		"inherits": "bless",
 		"arcana": "Hierophant",
 		"level": 42,
 		"stats": [22, 33, 24, 25, 29],
@@ -679,6 +723,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Samsara"]
 	},
 	"Dakini": {
+		"inherits": "phys",
 		"arcana": "Empress",
 		"level": 50,
 		"stats": [34, 32, 34, 28, 29],
@@ -695,6 +740,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Decarabia": {
+		"inherits": "fire",
 		"arcana": "Fool",
 		"level": 32,
 		"stats": [21, 23, 19, 22, 18],
@@ -711,6 +757,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Dionysus": {
+		"inherits": "ailment",
 		"arcana": "Fool",
 		"level": 61,
 		"stats": [35, 41, 38, 40, 36],
@@ -726,6 +773,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Dominion": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 68,
 		"stats": [46, 47, 45, 48, 40],
@@ -742,6 +790,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Eligor": {
+		"inherits": "fire",
 		"arcana": "Emperor",
 		"level": 16,
 		"stats": [12, 10, 13, 10, 10],
@@ -757,6 +806,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Emperor's Amulet": {
+		"inherits": "almighty",
 		"arcana": "Hanged Man",
 		"level": 35,
 		"stats": [35, 35, 35, 35, 35],
@@ -774,6 +824,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Phoenix": {
+		"inherits": "nuke",
 		"arcana": "Hierophant",
 		"level": 22,
 		"stats": [14, 15, 15, 18, 11],
@@ -781,6 +832,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Diarama": 23, "Dream Needle": 0, "Freila": 0, "Nuke Boost": 27, "Recarm": 25 }
 	},
 	"Flauros": {
+		"inherits": "ailment",
 		"arcana": "Devil",
 		"level": 25,
 		"stats": [19, 14, 18, 18, 13],
@@ -797,6 +849,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 1 to be fused"
 	},
 	"Forneus": {
+		"inherits": "psy",
 		"arcana": "Hierophant",
 		"level": 63,
 		"stats": [41, 39, 40, 42, 34],
@@ -813,6 +866,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Fortuna": {
+		"inherits": "wind",
 		"arcana": "Fortune",
 		"level": 46,
 		"stats": [23, 32, 29, 34, 27],
@@ -828,6 +882,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Futsunushi": {
+		"inherits": "phys",
 		"arcana": "Magician",
 		"level": 76,
 		"stats": [54, 48, 47, 49, 37],
@@ -845,6 +900,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Fuu-Ki": {
+		"inherits": "wind",
 		"arcana": "Star",
 		"level": 23,
 		"stats": [14, 17, 16, 15, 14],
@@ -853,6 +909,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Gabriel": {
+		"inherits": "almighty",
 		"arcana": "Temperance",
 		"level": 77,
 		"stats": [43, 51, 48, 54, 42],
@@ -869,6 +926,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Ganesha": {
+		"inherits": "ailment",
 		"arcana": "Sun",
 		"level": 53,
 		"stats": [39, 31, 37, 33, 26],
@@ -885,6 +943,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Garuda": {
+		"inherits": "wind",
 		"arcana": "Star",
 		"level": 52,
 		"stats": [30, 36, 29, 39, 29],
@@ -901,6 +960,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Genbu": {
+		"inherits": "ice",
 		"arcana": "Temperance",
 		"level": 7,
 		"stats": [5, 6, 7, 6, 4],
@@ -908,6 +968,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Bufu": 0, "Defense Master": 12, "Mabufu": 10, "Patra": 8, "Rakunda": 0, "Resist Forget": 11 }
 	},
 	"Girimehkala": {
+		"inherits": "ailment",
 		"arcana": "Moon",
 		"level": 44,
 		"stats": [36, 24, 32, 32, 15],
@@ -916,6 +977,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Hanuman": {
+		"inherits": "phys",
 		"arcana": "Star",
 		"level": 64,
 		"stats": [43, 38, 40, 40, 38],
@@ -931,6 +993,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Hariti": {
+		"inherits": "elec",
 		"arcana": "Empress",
 		"level": 40,
 		"stats": [24, 29, 25, 26, 23],
@@ -948,6 +1011,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Hecatoncheires": {
+		"inherits": "phys",
 		"arcana": "Hanged Man",
 		"level": 42,
 		"stats": [29, 25, 30, 25, 24],
@@ -963,6 +1027,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Hell Biker": {
+		"inherits": "fire",
 		"arcana": "Death",
 		"level": 39,
 		"stats": [26, 27, 24, 30, 17],
@@ -979,6 +1044,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"High Pixie": {
+		"inherits": "healing",
 		"arcana": "Fool",
 		"level": 16,
 		"stats": [8, 14, 10, 13, 10],
@@ -987,6 +1053,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Hope Diamond": {
+		"inherits": "almighty",
 		"arcana": "Death",
 		"level": 40,
 		"stats": [40, 40, 40, 40, 40],
@@ -1004,6 +1071,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Horus": {
+		"inherits": "almighty",
 		"arcana": "Sun",
 		"level": 49,
 		"stats": [30, 32, 32, 35, 25],
@@ -1019,6 +1087,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Hua Po": {
+		"inherits": "fire",
 		"arcana": "Hanged Man",
 		"level": 9,
 		"stats": [4, 10, 4, 8, 8],
@@ -1027,6 +1096,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Incubus": {
+		"inherits": "ailment",
 		"arcana": "Devil",
 		"level": 5,
 		"stats": [4, 6, 4, 5, 3],
@@ -1035,6 +1105,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Inugami": {
+		"inherits": "fire",
 		"arcana": "Hanged Man",
 		"level": 14,
 		"stats": [11, 9, 9, 12, 8],
@@ -1051,6 +1122,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Ippon-Datara": {
+		"inherits": "phys",
 		"arcana": "Hermit",
 		"level": 13,
 		"stats": [11, 7, 14, 6, 8],
@@ -1066,6 +1138,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Ishtar": {
+		"inherits": "healing",
 		"arcana": "Lovers",
 		"level": 85,
 		"stats": [48, 59, 49, 58, 48],
@@ -1082,6 +1155,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Isis": {
+		"inherits": "healing",
 		"arcana": "Priestess",
 		"level": 26,
 		"stats": [15, 21, 16, 18, 15],
@@ -1098,6 +1172,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Izanagi": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 20,
 		"stats": [14, 13, 13, 14, 13],
@@ -1115,6 +1190,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Cross Slash"]
 	},
 	"Izanagi Picaro": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 23,
 		"stats": [16, 15, 15, 16, 14],
@@ -1131,6 +1207,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Jack Frost": {
+		"inherits": "ice",
 		"arcana": "Magician",
 		"level": 11,
 		"stats": [8, 9, 7, 9, 7],
@@ -1139,6 +1216,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Jack-o'-Lantern": {
+		"inherits": "fire",
 		"arcana": "Magician",
 		"level": 2,
 		"stats": [2, 3, 3, 3, 2],
@@ -1147,6 +1225,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Jatayu": {
+		"inherits": "wind",
 		"arcana": "Tower",
 		"level": 32,
 		"stats": [18, 21, 20, 27, 17],
@@ -1162,6 +1241,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Jikokuten": {
+		"inherits": "phys",
 		"arcana": "Temperance",
 		"level": 25,
 		"stats": [19, 12, 19, 17, 15],
@@ -1177,6 +1257,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Kaguya": {
+		"inherits": "almighty",
 		"arcana": "Moon",
 		"level": 16,
 		"stats": [11, 15, 12, 11, 6],
@@ -1194,6 +1275,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Shining Arrows"]
 	},
 	"Kaguya Picaro": {
+		"inherits": "almighty",
 		"arcana": "Moon",
 		"level": 25,
 		"stats": [17, 20, 19, 15, 11],
@@ -1210,6 +1292,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Kaiwan": {
+		"inherits": "almighty",
 		"arcana": "Star",
 		"level": 36,
 		"stats": [23, 26, 24, 22, 20],
@@ -1226,6 +1309,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Kali": {
+		"inherits": "fire",
 		"arcana": "Empress",
 		"level": 77,
 		"stats": [53, 45, 46, 53, 41],
@@ -1241,6 +1325,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Kelpie": {
+		"inherits": "wind",
 		"arcana": "Strength",
 		"level": 6,
 		"stats": [5, 5, 5, 6, 4],
@@ -1249,6 +1334,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Kikuri-Hime": {
+		"inherits": "healing",
 		"arcana": "Priestess",
 		"level": 40,
 		"stats": [22, 31, 24, 28, 22],
@@ -1257,6 +1343,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Kin-Ki": {
+		"inherits": "phys",
 		"arcana": "Chariot",
 		"level": 25,
 		"stats": [21, 13, 21, 15, 12],
@@ -1273,6 +1360,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"King Frost": {
+		"inherits": "ice",
 		"arcana": "Emperor",
 		"level": 61,
 		"stats": [38, 39, 45, 33, 35],
@@ -1289,6 +1377,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Kodama": {
+		"inherits": "ailment",
 		"arcana": "Star",
 		"level": 11,
 		"stats": [7, 11, 8, 10, 4],
@@ -1305,6 +1394,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Koh-i-Noor": {
+		"inherits": "almighty",
 		"arcana": "Priestess",
 		"level": 25,
 		"stats": [25, 25, 25, 25, 25],
@@ -1322,6 +1412,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Kohryu": {
+		"inherits": "psy",
 		"arcana": "Hierophant",
 		"level": 76,
 		"stats": [43, 51, 50, 53, 38],
@@ -1339,6 +1430,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Koppa Tengu": {
+		"inherits": "wind",
 		"arcana": "Temperance",
 		"level": 11,
 		"stats": [7, 8, 8, 11, 6],
@@ -1347,6 +1439,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Koropokguru": {
+		"inherits": "ice",
 		"arcana": "Hermit",
 		"level": 9,
 		"stats": [5, 8, 6, 9, 6],
@@ -1355,6 +1448,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Koumokuten": {
+		"inherits": "phys",
 		"arcana": "Hermit",
 		"level": 49,
 		"stats": [37, 32, 34, 31, 25],
@@ -1371,6 +1465,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Kumbhanda": {
+		"inherits": "ailment",
 		"arcana": "Hermit",
 		"level": 42,
 		"stats": [29, 25, 27, 26, 26],
@@ -1386,13 +1481,15 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Kurama Tengu": {
+		"inherits": "wind",
 		"arcana": "Hermit",
 		"level": 56,
 		"stats": [34, 38, 34, 42, 27],
 		"elems": ["-", "-", "-", "wk", "-", "rp", "-", "-", "rs", "rs"],
 		"skills": { "Brain Buster": 0, "Garudyne": 57, "Growth 3": 58, "Heat Wave": 0, "Magarudyne": 60, "Masukunda": 0 }
 	},
-	"Kushinada": {
+	"Kushinada-Hime": {
+		"inherits": "healing",
 		"arcana": "Lovers",
 		"level": 42,
 		"stats": [24, 30, 26, 28, 25],
@@ -1408,6 +1505,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Kushi Mitama": {
+		"inherits": "healing",
 		"arcana": "Strength",
 		"level": 14,
 		"stats": [8, 12, 11, 9, 9],
@@ -1423,6 +1521,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Lachesis": {
+		"inherits": "ice",
 		"arcana": "Fortune",
 		"level": 34,
 		"stats": [18, 25, 22, 25, 19],
@@ -1438,6 +1537,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Lakshmi": {
+		"inherits": "healing",
 		"arcana": "Fortune",
 		"level": 69,
 		"stats": [40, 47, 43, 46, 38],
@@ -1454,6 +1554,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Lamia": {
+		"inherits": "fire",
 		"arcana": "Empress",
 		"level": 26,
 		"stats": [21, 15, 18, 19, 12],
@@ -1470,6 +1571,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Leanan Sidhe": {
+		"inherits": "almighty",
 		"arcana": "Lovers",
 		"level": 19,
 		"stats": [9, 17, 12, 16, 10],
@@ -1478,6 +1580,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Legion": {
+		"inherits": "psy",
 		"arcana": "Fool",
 		"level": 38,
 		"stats": [24, 24, 30, 23, 20],
@@ -1486,6 +1589,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Lilim": {
+		"inherits": "ice",
 		"arcana": "Devil",
 		"level": 32,
 		"stats": [17, 23, 18, 25, 20],
@@ -1502,6 +1606,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Lilith": {
+		"inherits": "almighty",
 		"arcana": "Moon",
 		"level": 60,
 		"stats": [33, 43, 37, 39, 35],
@@ -1517,6 +1622,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Lucifer": {
+		"inherits": "almighty",
 		"arcana": "Star",
 		"level": 93,
 		"stats": [61, 59, 59, 56, 51],
@@ -1536,6 +1642,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Morning Star"]
 	},
 	"Mada": {
+		"inherits": "fire",
 		"arcana": "Tower",
 		"level": 85,
 		"stats": [52, 51, 58, 56, 45],
@@ -1553,6 +1660,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Magatsu-Izanagi": {
+		"inherits": "almighty",
 		"arcana": "Tower",
 		"level": 44,
 		"stats": [37, 35, 32, 25, 10],
@@ -1570,6 +1678,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Magatsu-Izanagi"]
 	},
 	"Magatsu-Izanagi Picaro": {
+		"inherits": "almighty",
 		"arcana": "Tower",
 		"level": 48,
 		"stats": [40, 38, 35, 27, 11],
@@ -1587,6 +1696,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Magatsu-Izanagi"]
 	},
 	"Makami": {
+		"inherits": "nuke",
 		"arcana": "Temperance",
 		"level": 15,
 		"stats": [13, 12, 8, 11, 8],
@@ -1603,6 +1713,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Mandrake": {
+		"inherits": "elec",
 		"arcana": "Death",
 		"level": 3,
 		"stats": [2, 3, 3, 4, 4],
@@ -1611,6 +1722,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Mara": {
+		"inherits": "psy",
 		"arcana": "Tower",
 		"level": 73,
 		"stats": [47, 46, 49, 45, 39],
@@ -1626,6 +1738,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Matador": {
+		"inherits": "psy",
 		"arcana": "Death",
 		"level": 19,
 		"stats": [12, 13, 12, 16, 11],
@@ -1633,6 +1746,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Garula": 23, "Null Dizzy": 0, "Psi": 0, "Sukukaja": 0, "Swift Strike": 20, "Trigger Happy": 22 }
 	},
 	"Melchizedek": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 60,
 		"stats": [37, 38, 41, 39, 32],
@@ -1648,6 +1762,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Messiah": {
+		"inherits": "almighty",
 		"arcana": "Judgement",
 		"level": 81,
 		"stats": [50, 50, 50, 50, 50],
@@ -1666,6 +1781,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Orotorio"]
 	},
 	"Messiah Picaro": {
+		"inherits": "almighty",
 		"arcana": "Judgement",
 		"level": 90,
 		"stats": [56, 56, 55, 55, 55],
@@ -1683,6 +1799,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Metatron": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 89,
 		"stats": [54, 61, 60, 57, 42],
@@ -1701,6 +1818,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Michael": {
+		"inherits": "almighty",
 		"arcana": "Judgement",
 		"level": 87,
 		"stats": [57, 54, 55, 56, 46],
@@ -1717,7 +1835,8 @@ const personaMap: PersonaMap = {
 		"special": true,
 		"note": "Needs Strength cooperation rank 5 to be fused"
 	},
-	"Mitra": {
+	"Mithra": {
+		"inherits": "bless",
 		"arcana": "Temperance",
 		"level": 33,
 		"stats": [19, 26, 19, 24, 18],
@@ -1733,6 +1852,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Mithras": {
+		"inherits": "nuke",
 		"arcana": "Sun",
 		"level": 39,
 		"stats": [27, 25, 27, 25, 20],
@@ -1748,6 +1868,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Mokoi": {
+		"inherits": "ailment",
 		"arcana": "Death",
 		"level": 9,
 		"stats": [9, 5, 6, 10, 4],
@@ -1763,6 +1884,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Moloch": {
+		"inherits": "fire",
 		"arcana": "Hanged Man",
 		"level": 60,
 		"stats": [32, 45, 42, 31, 37],
@@ -1778,6 +1900,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Mot": {
+		"inherits": "ailment",
 		"arcana": "Death",
 		"level": 72,
 		"stats": [43, 51, 48, 42, 39],
@@ -1792,6 +1915,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Mother Harlot": {
+		"inherits": "ice",
 		"arcana": "Empress",
 		"level": 80,
 		"stats": [55, 48, 46, 49, 49],
@@ -1808,6 +1932,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Mothman": {
+		"inherits": "elec",
 		"arcana": "Moon",
 		"level": 33,
 		"stats": [21, 24, 16, 24, 21],
@@ -1823,6 +1948,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Naga": {
+		"inherits": "elec",
 		"arcana": "Hermit",
 		"level": 24,
 		"stats": [15, 17, 15, 17, 15],
@@ -1839,6 +1965,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Narcissus": {
+		"inherits": "ailment",
 		"arcana": "Lovers",
 		"level": 50,
 		"stats": [27, 36, 29, 35, 30],
@@ -1854,6 +1981,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Nebiros": {
+		"inherits": "curse",
 		"arcana": "Devil",
 		"level": 62,
 		"stats": [39, 40, 42, 36, 36],
@@ -1869,6 +1997,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Neko Shogun": {
+		"inherits": "almighty",
 		"arcana": "Star",
 		"level": 30,
 		"stats": [19, 20, 19, 21, 18],
@@ -1886,6 +2015,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 1 to be fused"
 	},
 	"Nekomata": {
+		"inherits": "ailment",
 		"arcana": "Magician",
 		"level": 17,
 		"stats": [13, 10, 12, 15, 8],
@@ -1902,6 +2032,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Nigi Mitama": {
+		"inherits": "healing",
 		"arcana": "Temperance",
 		"level": 20,
 		"stats": [12, 14, 14, 15, 12],
@@ -1909,6 +2040,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Baisudi": 0, "Divine Grace": 22, "Makouha": 0, "Me Patra": 23, "Media": 0, "Rainy Play": 24 }
 	},
 	"Norn": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 52,
 		"stats": [30, 38, 33, 34, 28],
@@ -1924,6 +2056,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Nue": {
+		"inherits": "curse",
 		"arcana": "Moon",
 		"level": 20,
 		"stats": [16, 10, 17, 14, 10],
@@ -1940,6 +2073,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Obariyon": {
+		"inherits": "phys",
 		"arcana": "Fool",
 		"level": 8,
 		"stats": [7, 3, 9, 8, 4],
@@ -1948,6 +2082,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Oberon": {
+		"inherits": "elec",
 		"arcana": "Emperor",
 		"level": 66,
 		"stats": [40, 44, 43, 43, 35],
@@ -1965,6 +2100,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Odin": {
+		"inherits": "elec",
 		"arcana": "Emperor",
 		"level": 82,
 		"stats": [53, 52, 54, 52, 42],
@@ -1981,6 +2117,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Okuninushi": {
+		"inherits": "psy",
 		"arcana": "Emperor",
 		"level": 44,
 		"stats": [30, 28, 29, 28, 24],
@@ -1996,6 +2133,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Ongyo-Ki": {
+		"inherits": "phys",
 		"arcana": "Hermit",
 		"level": 75,
 		"stats": [56, 42, 47, 48, 39],
@@ -2013,6 +2151,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Oni": {
+		"inherits": "phys",
 		"arcana": "Strength",
 		"level": 19,
 		"stats": [17, 8, 16, 13, 10],
@@ -2021,6 +2160,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Onmoraki": {
+		"inherits": "curse",
 		"arcana": "Moon",
 		"level": 12,
 		"stats": [9, 12, 7, 10, 5],
@@ -2029,6 +2169,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Orlov": {
+		"inherits": "almighty",
 		"arcana": "Strength",
 		"level": 30,
 		"stats": [30, 30, 30, 30, 30],
@@ -2046,6 +2187,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Orobas": {
+		"inherits": "fire",
 		"arcana": "Hierophant",
 		"level": 17,
 		"stats": [11, 14, 15, 12, 6],
@@ -2054,6 +2196,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Orpheus": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 26,
 		"stats": [17, 17, 17, 17, 17],
@@ -2071,6 +2214,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Cadenza"]
 	},
 	"Orpheus Picaro": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 29,
 		"stats": [19, 19, 19, 19, 18],
@@ -2087,6 +2231,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Orthrus": {
+		"inherits": "fire",
 		"arcana": "Hanged Man",
 		"level": 21,
 		"stats": [16, 14, 14, 19, 7],
@@ -2095,6 +2240,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Ose": {
+		"inherits": "ailment",
 		"arcana": "Fool",
 		"level": 42,
 		"stats": [32, 24, 25, 31, 21],
@@ -2103,6 +2249,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Pale Rider": {
+		"inherits": "curse",
 		"arcana": "Death",
 		"level": 53,
 		"stats": [34, 34, 33, 39, 26],
@@ -2118,6 +2265,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Parvati": {
+		"inherits": "psy",
 		"arcana": "Lovers",
 		"level": 56,
 		"stats": [33, 39, 33, 39, 31],
@@ -2134,6 +2282,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Pazuzu": {
+		"inherits": "curse",
 		"arcana": "Devil",
 		"level": 43,
 		"stats": [29, 30, 27, 26, 24],
@@ -2149,6 +2298,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Pisaca": {
+		"inherits": "curse",
 		"arcana": "Death",
 		"level": 29,
 		"stats": [19, 21, 21, 17, 16],
@@ -2165,6 +2315,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Pixie": {
+		"inherits": "elec",
 		"arcana": "Lovers",
 		"level": 2,
 		"stats": [1, 3, 3, 4, 2],
@@ -2173,6 +2324,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Power": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 41,
 		"stats": [30, 26, 28, 25, 21],
@@ -2189,6 +2341,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Principality": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 29,
 		"stats": [17, 19, 18, 21, 19],
@@ -2196,6 +2349,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Bless Boost": 34, "Mabaisudi": 32, "Makajamon": 0, "Makouga": 0, "Mediarama": 31, "Tetraja": 0 }
 	},
 	"Queen Mab": {
+		"inherits": "almighty",
 		"arcana": "Magician",
 		"level": 43,
 		"stats": [23, 35, 26, 30, 22],
@@ -2204,6 +2358,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Quetzalcoatl": {
+		"inherits": "wind",
 		"arcana": "Sun",
 		"level": 63,
 		"stats": [38, 42, 41, 41, 34],
@@ -2219,6 +2374,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Raja Naga": {
+		"inherits": "elec",
 		"arcana": "Temperance",
 		"level": 55,
 		"stats": [33, 37, 36, 35, 31],
@@ -2234,6 +2390,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Rakshasa": {
+		"inherits": "phys",
 		"arcana": "Strength",
 		"level": 24,
 		"stats": [20, 15, 18, 17, 9],
@@ -2250,6 +2407,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Rangda": {
+		"inherits": "curse",
 		"arcana": "Magician",
 		"level": 48,
 		"stats": [28, 34, 30, 33, 26],
@@ -2258,6 +2416,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Raphael": {
+		"inherits": "almighty",
 		"arcana": "Lovers",
 		"level": 78,
 		"stats": [57, 45, 49, 55, 35],
@@ -2273,6 +2432,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Red Rider": {
+		"inherits": "psy",
 		"arcana": "Tower",
 		"level": 41,
 		"stats": [26, 27, 25, 29, 23],
@@ -2288,6 +2448,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Regent": {
+		"inherits": "almighty",
 		"arcana": "Emperor",
 		"level": 10,
 		"stats": [10, 10, 10, 10, 10],
@@ -2305,6 +2466,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Saki Mitama": {
+		"inherits": "healing",
 		"arcana": "Lovers",
 		"level": 6,
 		"stats": [4, 6, 5, 6, 4],
@@ -2312,6 +2474,7 @@ const personaMap: PersonaMap = {
 		"skills": { "Bufu": 0, "Energy Drop": 0, "Growth 1": 7, "Rakukaja": 8, "Resist Dizzy": 10, "Wind Wall": 0 }
 	},
 	"Sandalphon": {
+		"inherits": "bless",
 		"arcana": "Moon",
 		"level": 75,
 		"stats": [46, 51, 49, 48, 38],
@@ -2327,6 +2490,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Sandman": {
+		"inherits": "wind",
 		"arcana": "Magician",
 		"level": 24,
 		"stats": [11, 13, 14, 20, 21],
@@ -2343,6 +2507,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Sarasvati": {
+		"inherits": "healing",
 		"arcana": "Priestess",
 		"level": 50,
 		"stats": [30, 35, 32, 33, 27],
@@ -2358,6 +2523,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Satan": {
+		"inherits": "ice",
 		"arcana": "Judgement",
 		"level": 92,
 		"stats": [62, 59, 55, 52, 55],
@@ -2376,6 +2542,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Black Viper"]
 	},
 	"Satanael": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 95,
 		"stats": [63, 60, 57, 56, 56],
@@ -2394,6 +2561,7 @@ const personaMap: PersonaMap = {
 		"note": "Only available on NG+"
 	},
 	"Scathach": {
+		"inherits": "wind",
 		"arcana": "Priestess",
 		"level": 45,
 		"stats": [29, 30, 28, 30, 25],
@@ -2410,6 +2578,7 @@ const personaMap: PersonaMap = {
 		"personality": "Upbeat"
 	},
 	"Seiryu": {
+		"inherits": "ice",
 		"arcana": "Temperance",
 		"level": 62,
 		"stats": [38, 41, 43, 37, 34],
@@ -2425,6 +2594,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Setanta": {
+		"inherits": "phys",
 		"arcana": "Emperor",
 		"level": 28,
 		"stats": [20, 17, 19, 18, 17],
@@ -2439,6 +2609,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Seth": {
+		"inherits": "fire",
 		"arcana": "Tower",
 		"level": 51,
 		"stats": [32, 35, 30, 35, 28],
@@ -2455,6 +2626,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 1 to be fused"
 	},
 	"Shiisaa": {
+		"inherits": "elec",
 		"arcana": "Chariot",
 		"level": 16,
 		"stats": [13, 9, 12, 13, 8],
@@ -2469,6 +2641,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Shiki-Ouji": {
+		"inherits": "psy",
 		"arcana": "Chariot",
 		"level": 21,
 		"stats": [11, 15, 16, 16, 13],
@@ -2477,6 +2650,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Shiva": {
+		"inherits": "psy",
 		"arcana": "Judgement",
 		"level": 82,
 		"stats": [55, 54, 53, 53, 38],
@@ -2493,6 +2667,7 @@ const personaMap: PersonaMap = {
 		"special": true
 	},
 	"Siegfried": {
+		"inherits": "phys",
 		"arcana": "Strength",
 		"level": 69,
 		"stats": [51, 37, 47, 48, 31],
@@ -2507,6 +2682,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Silky": {
+		"inherits": "healing",
 		"arcana": "Priestess",
 		"level": 6,
 		"stats": [4, 7, 4, 5, 5],
@@ -2515,6 +2691,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Skadi": {
+		"inherits": "ice",
 		"arcana": "Priestess",
 		"level": 55,
 		"stats": [35, 39, 34, 34, 30],
@@ -2530,6 +2707,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Slime": {
+		"inherits": "curse",
 		"arcana": "Chariot",
 		"level": 10,
 		"stats": [9, 6, 11, 6, 5],
@@ -2538,6 +2716,7 @@ const personaMap: PersonaMap = {
 		"personality": "Timid"
 	},
 	"Sraosha": {
+		"inherits": "bless",
 		"arcana": "Star",
 		"level": 80,
 		"stats": [47, 56, 45, 56, 43],
@@ -2555,6 +2734,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 5 to be fused"
 	},
 	"Stone of Scone": {
+		"inherits": "almighty",
 		"arcana": "Fortune",
 		"level": 20,
 		"stats": [20, 20, 20, 20, 20],
@@ -2563,6 +2743,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Succubus": {
+		"inherits": "curse",
 		"arcana": "Moon",
 		"level": 7,
 		"stats": [4, 7, 5, 8, 4],
@@ -2571,6 +2752,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Sudama": {
+		"inherits": "psy",
 		"arcana": "Hermit",
 		"level": 17,
 		"stats": [9, 14, 12, 13, 10],
@@ -2586,6 +2768,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Sui-Ki": {
+		"inherits": "ice",
 		"arcana": "Moon",
 		"level": 24,
 		"stats": [16, 15, 15, 18, 15],
@@ -2602,6 +2785,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Surt": {
+		"inherits": "fire",
 		"arcana": "Magician",
 		"level": 59,
 		"stats": [37, 40, 39, 35, 33],
@@ -2616,6 +2800,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Suzaku": {
+		"inherits": "nuke",
 		"arcana": "Sun",
 		"level": 19,
 		"stats": [11, 14, 10, 18, 11],
@@ -2631,6 +2816,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Take-Minakata": {
+		"inherits": "elec",
 		"arcana": "Hanged Man",
 		"level": 29,
 		"stats": [20, 22, 21, 18, 13],
@@ -2646,6 +2832,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Thanatos": {
+		"inherits": "almighty",
 		"arcana": "Death",
 		"level": 65,
 		"stats": [43, 49, 41, 38, 31],
@@ -2663,6 +2850,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Door of Hades"]
 	},
 	"Thanatos Picaro": {
+		"inherits": "almighty",
 		"arcana": "Death",
 		"level": 69,
 		"stats": [45, 51, 43, 40, 35],
@@ -2679,6 +2867,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Queen's Necklace": {
+		"inherits": "almighty",
 		"arcana": "Empress",
 		"level": 15,
 		"stats": [15, 15, 15, 15, 15],
@@ -2696,6 +2885,7 @@ const personaMap: PersonaMap = {
 		"rare": true
 	},
 	"Thor": {
+		"inherits": "elec",
 		"arcana": "Chariot",
 		"level": 64,
 		"stats": [44, 39, 43, 38, 35],
@@ -2711,6 +2901,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Thoth": {
+		"inherits": "nuke",
 		"arcana": "Emperor",
 		"level": 36,
 		"stats": [21, 28, 21, 24, 21],
@@ -2727,6 +2918,7 @@ const personaMap: PersonaMap = {
 		"personality": "Gloomy"
 	},
 	"Throne": {
+		"inherits": "bless",
 		"arcana": "Justice",
 		"level": 71,
 		"stats": [42, 49, 47, 46, 36],
@@ -2744,6 +2936,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 5 to be fused"
 	},
 	"Titania": {
+		"inherits": "nuke",
 		"arcana": "Empress",
 		"level": 56,
 		"stats": [32, 40, 35, 38, 30],
@@ -2758,6 +2951,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Trumpeter": {
+		"inherits": "almighty",
 		"arcana": "Judgement",
 		"level": 59,
 		"stats": [33, 42, 40, 38, 31],
@@ -2775,6 +2969,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 5 to be fused"
 	},
 	"Tsukiyomi": {
+		"inherits": "almighty",
 		"arcana": "Moon",
 		"level": 50,
 		"stats": [38, 32, 33, 37, 17],
@@ -2792,6 +2987,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Abyssal Wings"]
 	},
 	"Tsukiyomi Picaro": {
+		"inherits": "almighty",
 		"arcana": "Moon",
 		"level": 55,
 		"stats": [41, 35, 36, 40, 20],
@@ -2808,6 +3004,7 @@ const personaMap: PersonaMap = {
 		"dlc": true
 	},
 	"Unicorn": {
+		"inherits": "bless",
 		"arcana": "Hierophant",
 		"level": 39,
 		"stats": [20, 27, 25, 28, 24],
@@ -2824,6 +3021,7 @@ const personaMap: PersonaMap = {
 		"personality": "Unknown"
 	},
 	"Uriel": {
+		"inherits": "almighty",
 		"arcana": "Justice",
 		"level": 81,
 		"stats": [50, 54, 49, 55, 42],
@@ -2839,6 +3037,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Valkyrie": {
+		"inherits": "phys",
 		"arcana": "Strength",
 		"level": 44,
 		"stats": [33, 24, 28, 29, 25],
@@ -2853,6 +3052,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Vasuki": {
+		"inherits": "ailment",
 		"arcana": "Hanged Man",
 		"level": 68,
 		"stats": [41, 46, 45, 42, 37],
@@ -2870,6 +3070,7 @@ const personaMap: PersonaMap = {
 		"note": "Needs Strength cooperation rank 1 to be fused"
 	},
 	"Vishnu": {
+		"inherits": "almighty",
 		"arcana": "Fool",
 		"level": 83,
 		"stats": [56, 51, 49, 57, 43],
@@ -2887,6 +3088,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"White Rider": {
+		"inherits": "curse",
 		"arcana": "Chariot",
 		"level": 39,
 		"stats": [24, 24, 25, 26, 25],
@@ -2903,6 +3105,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Yaksini": {
+		"inherits": "ice",
 		"arcana": "Empress",
 		"level": 20,
 		"stats": [14, 11, 13, 16, 13],
@@ -2918,6 +3121,7 @@ const personaMap: PersonaMap = {
 		"personality": "Irritable"
 	},
 	"Yamata-no-Orochi": {
+		"inherits": "ice",
 		"arcana": "Judgement",
 		"level": 64,
 		"stats": [44, 38, 48, 36, 33],
@@ -2932,6 +3136,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Yatagarasu": {
+		"inherits": "fire",
 		"arcana": "Sun",
 		"level": 57,
 		"stats": [35, 41, 30, 40, 32],
@@ -2947,6 +3152,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Yoshitsune": {
+		"inherits": "phys",
 		"arcana": "Tower",
 		"level": 79,
 		"stats": [58, 47, 45, 53, 41],
@@ -2965,6 +3171,7 @@ const personaMap: PersonaMap = {
 		"uniqueSkills": ["Hassou Tobi"]
 	},
 	"Yurlungur": {
+		"inherits": "elec",
 		"arcana": "Sun",
 		"level": 42,
 		"stats": [26, 29, 28, 27, 23],
@@ -2980,6 +3187,7 @@ const personaMap: PersonaMap = {
 		}
 	},
 	"Zaou-Gongen": {
+		"inherits": "fire",
 		"arcana": "Strength",
 		"level": 80,
 		"stats": [57, 45, 50, 56, 39],
@@ -2996,6 +3204,7 @@ const personaMap: PersonaMap = {
 		"max": true
 	},
 	"Zouchouten": {
+		"inherits": "elec",
 		"arcana": "Strength",
 		"level": 31,
 		"stats": [22, 19, 24, 18, 17],

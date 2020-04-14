@@ -17,6 +17,7 @@ class PersonaController {
 
 		this.$scope.personaName = personaName;
 		this.$scope.persona = personaMap[personaName];
+		this.$scope.trait = skillMap[this.$scope.persona.trait]
 		if (!this.$scope.persona) return;
 
 		let calc = new FusionCalculator(customPersonaeByArcana);

@@ -277,3 +277,45 @@ var specialCombos = [
 var dlcPersona = [["Orpheus", "Orpheus Picaro"], ["Izanagi", "Izanagi Picaro"], ["Thanatos", "Thanatos Picaro"],
     ["Magatsu-Izanagi", "Magatsu-Izanagi Picaro"], ["Kaguya", "Kaguya Picaro"], ["Ariadne", "Ariadne Picaro"],
     ["Asterius", "Asterius Picaro"], ["Tsukiyomi", "Tsukiyomi Picaro"], ["Messiah", "Messiah Picaro"]];
+var inherits = [
+    "phys",
+    "fire",
+    "ice",
+    "elec",
+    "wind",
+    "psy",
+    "nuke",
+    "bless",
+    "curse",
+    "ailment",
+    "healing",
+    "almighty"
+];
+var elems = [
+    "phys",
+    "gun",
+    "fire",
+    "ice",
+    "elec",
+    "wind",
+    "psy",
+    "nuke",
+    "bless",
+    "curse",
+    "ailment",
+    "healing"
+];
+var ratios = [
+    "OO--------OO",
+    "OOO-OOOOOOOO",
+    "OO-OOOOOOOOO",
+    "OOOOO-OOOOOO",
+    "OOOO-OOOOOOO",
+    "OOOOOOO-OOOO",
+    "OOOOOO-OOOOO",
+    "--OOOOOOO--O",
+    "--OOOOOO-OO-",
+    "OOOOOOOO-OO-",
+    "--OOOOOOO-OO",
+    "OOOOOOOOOOOO"
+];

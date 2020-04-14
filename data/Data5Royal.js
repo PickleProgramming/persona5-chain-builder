@@ -350,3 +350,45 @@ var dlcPersonaRoyal = [
     ["Izanagi-no-Okami", "Izanagi-no-Okami Picaro"],
     ["Raoul"]
 ];
+var inheritsRoyal = [
+    "phys",
+    "fire",
+    "ice",
+    "elec",
+    "wind",
+    "psy",
+    "nuke",
+    "bless",
+    "curse",
+    "ailment",
+    "healing",
+    "almighty"
+];
+var elemsRoyal = [
+    "phys",
+    "gun",
+    "fire",
+    "ice",
+    "elec",
+    "wind",
+    "psy",
+    "nuke",
+    "bless",
+    "curse",
+    "ailment",
+    "healing"
+];
+var ratiosRoyal = [
+    "OO--------OO",
+    "OOO-OOOOOOOO",
+    "OO-OOOOOOOOO",
+    "OOOOO-OOOOOO",
+    "OOOO-OOOOOOO",
+    "OOOOOOO-OOOO",
+    "OOOOOO-OOOOO",
+    "--OOOOOOO--O",
+    "--OOOOOO-OO-",
+    "OOOOOOOO-OO-",
+    "--OOOOOOO-OO",
+    "OOOOOOOOOOOO"
+];

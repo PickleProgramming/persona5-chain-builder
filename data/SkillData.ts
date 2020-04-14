@@ -8,7 +8,7 @@ interface SkillData {
 	name?: string;
 	cost?: number;
 	effect: string;
-	element: "phys" | "gun" | "fire" | "ice" | "electric" | "wind" | "psy" | "nuclear" | "bless" | "curse" |
+	element: "phys" | "gun" | "fire" | "ice" | "elec" | "wind" | "psy" | "nuke" | "bless" | "curse" |
 	"almighty" | "ailment" | "support" | "passive" | "healing" | "trait";
 	personas?: {
 		[name: string]: number;
@@ -46,7 +46,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Absorb Elec": {
-		"effect": "Absorb Electric attacks.",
+		"effect": "Absorb elec attacks.",
 		"element": "passive",
 		"personas": {}
 	},
@@ -65,7 +65,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Absorb Nuke": {
-		"effect": "Absorb Nuclear attacks.",
+		"effect": "Absorb nuke attacks.",
 		"element": "passive",
 		"personas": {
 			"Kali": 82
@@ -289,8 +289,8 @@ const skillMap: SkillMap = {
 	},
 	"Atomic Flare": {
 		"cost": 4800,
-		"effect": "Deal severe Nuclear damage to 1 foe.",
-		"element": "nuclear",
+		"effect": "Deal severe nuke damage to 1 foe.",
+		"element": "nuke",
 		"personas": {
 			"Asura-Ou": 0
 		}
@@ -590,8 +590,8 @@ const skillMap: SkillMap = {
 	},
 	"Cosmic Flare": {
 		"cost": 5400,
-		"effect": "Deal severe Nuclear damage to all foes.",
-		"element": "nuclear",
+		"effect": "Deal severe nuke damage to all foes.",
+		"element": "nuke",
 		"personas": {
 			"Ardha": 0,
 			"Michael": 92,
@@ -918,7 +918,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Dodge Elec": {
-		"effect": "Double evasion rate against Electric attacks.",
+		"effect": "Double evasion rate against elec attacks.",
 		"element": "passive",
 		"personas": {
 			"Agathion": 8,
@@ -951,7 +951,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Dodge Nuke": {
-		"effect": "Double evasion rate against Nuclear attacks.",
+		"effect": "Double evasion rate against nuke attacks.",
 		"element": "passive",
 		"personas": {
 			"Koh-i-Noor": 0
@@ -1081,14 +1081,14 @@ const skillMap: SkillMap = {
 	},
 	"Wild Thunder": {
 		"cost": 5400,
-		"effect": "Deal severe Electric damage to all foes.",
-		"element": "electric",
+		"effect": "Deal severe elec damage to all foes.",
+		"element": "elec",
 		"personas": {
 			"Odin": 84
 		}
 	},
 	"Elec Amp": {
-		"effect": "Strengthen Electric attacks by 50%.",
+		"effect": "Strengthen elec attacks by 50%.",
 		"element": "passive",
 		"fuse": "Oberon",
 		"personas": {
@@ -1099,7 +1099,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Elec Boost": {
-		"effect": "Strengthen Electric attacks by 25%.",
+		"effect": "Strengthen elec attacks by 25%.",
 		"element": "passive",
 		"fuse": "Naga",
 		"personas": {
@@ -1111,7 +1111,7 @@ const skillMap: SkillMap = {
 	},
 	"Elec Break": {
 		"cost": 1500,
-		"effect": "Negate Electric resistances of all foes.",
+		"effect": "Negate elec resistances of all foes.",
 		"element": "support",
 		"personas": {
 			"Atropos": 0,
@@ -1123,7 +1123,7 @@ const skillMap: SkillMap = {
 	},
 	"Elec Wall": {
 		"cost": 1800,
-		"effect": "Create a shield on 1 ally to reduce damage of Electric attacks for 3 turns.",
+		"effect": "Create a shield on 1 ally to reduce damage of elec attacks for 3 turns.",
 		"element": "support",
 		"personas": {
 			"Ananta": 0,
@@ -1206,7 +1206,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Evade Elec": {
-		"effect": "Triple evasion rate against Electric attacks.",
+		"effect": "Triple evasion rate against elec attacks.",
 		"element": "passive",
 		"personas": {
 			"Fortuna": 51,
@@ -1229,7 +1229,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Evade Nuke": {
-		"effect": "Triple evasion rate against Nuclear attacks.",
+		"effect": "Triple evasion rate against nuke attacks.",
 		"element": "passive",
 		"personas": {
 			"Okuninushi": 47
@@ -1387,8 +1387,8 @@ const skillMap: SkillMap = {
 	},
 	"Frei": {
 		"cost": 400,
-		"effect": "Deal weak Nuclear damage to 1 foe.",
-		"element": "nuclear",
+		"effect": "Deal weak nuke damage to 1 foe.",
+		"element": "nuke",
 		"personas": {
 			"Makami": 0,
 			"Suzaku": 0
@@ -1397,8 +1397,8 @@ const skillMap: SkillMap = {
 	},
 	"Freidyne": {
 		"cost": 1200,
-		"effect": "Deal heavy Nuclear damage to 1 foe.",
-		"element": "nuclear",
+		"effect": "Deal heavy nuke damage to 1 foe.",
+		"element": "nuke",
 		"personas": {
 			"Ananta": 48,
 			"Bishamonten": 0,
@@ -1410,8 +1410,8 @@ const skillMap: SkillMap = {
 	},
 	"Freila": {
 		"cost": 800,
-		"effect": "Deal medium Nuclear damage to 1 foe.",
-		"element": "nuclear",
+		"effect": "Deal medium nuke damage to 1 foe.",
+		"element": "nuke",
 		"fuse": "Ara Mitama",
 		"personas": {
 			"Ara Mitama": 0,
@@ -1967,8 +1967,8 @@ const skillMap: SkillMap = {
 	},
 	"Mafrei": {
 		"cost": 1000,
-		"effect": "Deal weak Nuclear damage to all foes.",
-		"element": "nuclear",
+		"effect": "Deal weak nuke damage to all foes.",
+		"element": "nuke",
 		"fuse": "Suzaku",
 		"personas": {
 			"Makami": 17,
@@ -1978,8 +1978,8 @@ const skillMap: SkillMap = {
 	},
 	"Mafreidyne": {
 		"cost": 2200,
-		"effect": "Deal heavy Nuclear damage to all foes.",
-		"element": "nuclear",
+		"effect": "Deal heavy nuke damage to all foes.",
+		"element": "nuke",
 		"fuse": "Bishamonten",
 		"personas": {
 			"Asura-Ou": 79,
@@ -1991,8 +1991,8 @@ const skillMap: SkillMap = {
 	},
 	"Mafreila": {
 		"cost": 1600,
-		"effect": "Deal medium Nuclear damage to all foes.",
-		"element": "nuclear",
+		"effect": "Deal medium nuke damage to all foes.",
+		"element": "nuke",
 		"personas": {
 			"Ananta": 0,
 			"Mithras": 0,
@@ -2407,8 +2407,8 @@ const skillMap: SkillMap = {
 	},
 	"Mazio": {
 		"cost": 1000,
-		"effect": "Deal weak Electric damage to all foes.",
-		"element": "electric",
+		"effect": "Deal weak elec damage to all foes.",
+		"element": "elec",
 		"fuse": "Shiisaa",
 		"personas": {
 			"Ame-no-Uzume": 0,
@@ -2417,8 +2417,8 @@ const skillMap: SkillMap = {
 	},
 	"Maziodyne": {
 		"cost": 2200,
-		"effect": "Deal heavy Electric damage to all foes.",
-		"element": "electric",
+		"effect": "Deal heavy elec damage to all foes.",
+		"element": "elec",
 		"personas": {
 			"Barong": 57,
 			"Crystal Skull": 0,
@@ -2435,8 +2435,8 @@ const skillMap: SkillMap = {
 	},
 	"Mazionga": {
 		"cost": 1600,
-		"effect": "Deal medium Electric damage to all foes.",
-		"element": "electric",
+		"effect": "Deal medium elec damage to all foes.",
+		"element": "elec",
 		"fuse": "Atropos",
 		"personas": {
 			"Atropos": 0,
@@ -2676,7 +2676,7 @@ const skillMap: SkillMap = {
 		"talk": "Lamia"
 	},
 	"Nuke Amp": {
-		"effect": "Strengthen Nuclear attacks by 50%.",
+		"effect": "Strengthen nuke attacks by 50%.",
 		"element": "passive",
 		"fuse": "Moloch",
 		"personas": {
@@ -2686,7 +2686,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Nuke Boost": {
-		"effect": "Strengthen Nuclear attacks by 25%.",
+		"effect": "Strengthen nuke attacks by 25%.",
 		"element": "passive",
 		"fuse": "Phoenix",
 		"personas": {
@@ -2696,7 +2696,7 @@ const skillMap: SkillMap = {
 	},
 	"Nuke Break": {
 		"cost": 1500,
-		"effect": "Negate Nuclear resistances of all foes.",
+		"effect": "Negate nuke resistances of all foes.",
 		"element": "support",
 		"personas": {
 			"Mithras": 42
@@ -2704,7 +2704,7 @@ const skillMap: SkillMap = {
 	},
 	"Nuke Wall": {
 		"cost": 1800,
-		"effect": "Create a shield on 1 ally to reduce damage of Nuclear attacks for 3 turns.",
+		"effect": "Create a shield on 1 ally to reduce damage of nuke attacks for 3 turns.",
 		"element": "support",
 		"personas": {
 			"Koumokuten": 53
@@ -2748,7 +2748,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Null Elec": {
-		"effect": "Impart immunity against Electric attacks.",
+		"effect": "Impart immunity against elec attacks.",
 		"element": "passive",
 		"personas": {
 			"Barong": 55
@@ -2781,7 +2781,7 @@ const skillMap: SkillMap = {
 		"personas": {}
 	},
 	"Null Nuke": {
-		"effect": "Impart immunity against Nuclear attacks.",
+		"effect": "Impart immunity against nuke attacks.",
 		"element": "passive",
 		"personas": {
 			"Sui-Ki": 26
@@ -3212,7 +3212,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Repel Elec": {
-		"effect": "Repel Electric attacks.",
+		"effect": "Repel elec attacks.",
 		"element": "passive",
 		"personas": {
 			"Mot": 77
@@ -3236,7 +3236,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Repel Nuke": {
-		"effect": "Repel Nuclear attacks.",
+		"effect": "Repel nuke attacks.",
 		"element": "passive",
 		"personas": {
 			"Seiryu": 63,
@@ -3308,7 +3308,7 @@ const skillMap: SkillMap = {
 		}
 	},
 	"Resist Elec": {
-		"effect": "Reduce damage from Electric attacks.",
+		"effect": "Reduce damage from elec attacks.",
 		"element": "passive",
 		"personas": {}
 	},
@@ -3342,7 +3342,7 @@ const skillMap: SkillMap = {
 		"personas": {}
 	},
 	"Resist Nuke": {
-		"effect": "Reduce damage from Nuclear attacks.",
+		"effect": "Reduce damage from nuke attacks.",
 		"element": "passive",
 		"personas": {}
 	},
@@ -3818,8 +3818,8 @@ const skillMap: SkillMap = {
 	},
 	"Thunder Reign": {
 		"cost": 4800,
-		"effect": "Deal severe Electric damage to 1 foe.",
-		"element": "electric",
+		"effect": "Deal severe elec damage to 1 foe.",
+		"element": "elec",
 		"personas": {
 			"Odin": 0
 		}
@@ -4011,8 +4011,8 @@ const skillMap: SkillMap = {
 	},
 	"Zio": {
 		"cost": 400,
-		"effect": "Deal weak Electric damage to 1 foe.",
-		"element": "electric",
+		"effect": "Deal weak elec damage to 1 foe.",
+		"element": "elec",
 		"fuse": "Agathion",
 		"personas": {
 			"Agathion": 0,
@@ -4022,8 +4022,8 @@ const skillMap: SkillMap = {
 	},
 	"Ziodyne": {
 		"cost": 1200,
-		"effect": "Deal heavy Electric damage to 1 foe.",
-		"element": "electric",
+		"effect": "Deal heavy elec damage to 1 foe.",
+		"element": "elec",
 		"fuse": "Raja Naga",
 		"personas": {
 			"Baphomet": 61,
@@ -4039,8 +4039,8 @@ const skillMap: SkillMap = {
 	},
 	"Zionga": {
 		"cost": 800,
-		"effect": "Deal medium Electric damage to 1 foe.",
-		"element": "electric",
+		"effect": "Deal medium elec damage to 1 foe.",
+		"element": "elec",
 		"fuse": "Isis",
 		"personas": {
 			"Hariti": 0,

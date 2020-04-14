@@ -108,7 +108,17 @@
 				<!-- Preferred Persona -->
 				<!-- TODO: Do not allow entries not clicked from the list to be allowed -->
 				<div angucomplete-alt id="targetPersona" placeholder="Persona (Optional)" maxlength="50" pause="100"
-					selected-object="targetPersona" local-data="customStandardPersonaeNames" search-fields="name" title-field="name"
+					selected-object="targetPersona" local-data="customPersonaeNames" search-fields="name" title-field="name"
+					minlength="1" input-class="form-control form-control-small" match-class="highlight">
+				</div>
+			</div>
+		</div>
+		<div class="ui search">
+			<div class="ui input">
+				<!-- Preferred Persona -->
+				<!-- TODO: Do not allow entries not clicked from the list to be allowed -->
+				<div angucomplete-alt id="targetTrait" placeholder="Trait (Optional)" maxlength="50" pause="100"
+					selected-object="targetTrait" local-data="traitList" search-fields="name" title-field="name"
 					minlength="1" input-class="form-control form-control-small" match-class="highlight">
 				</div>
 			</div>
@@ -133,6 +143,10 @@
 		<tr>
 			<td class="center aligned">{{inputSkills[6].originalObject.name}}</td>
 			<td class="center aligned">{{inputSkills[7].originalObject.name}}</td>
+		</tr>
+		<tr>
+			<td class="center aligned">{{targetPersona.originalObject.name}}</td>
+			<td class="center aligned">{{targetTrait.originalObject.name}}</td>
 		</tr>
 	</tbody>
 </table>

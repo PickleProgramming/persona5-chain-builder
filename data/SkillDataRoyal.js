@@ -10,7 +10,7 @@ var skillMapRoyal = {
         "fuse": ["Attis"],
         "personas": { "Attis": 86, "Loa": 73, "Lucifer": 0, "Tsukiyomi": 0, "Tsukiyomi Picaro": 0 }
     },
-    "Absorb Elec": { "card": "Foggy Day ???", "effect": "Absorb Electric attacks.", "element": "passive" },
+    "Absorb Elec": { "card": "Foggy Day ???", "effect": "Absorb elec attacks.", "element": "passive" },
     "Absorb Fire": {
         "card": "Full Moon ???",
         "effect": "Absorb Fire attacks.",
@@ -23,7 +23,7 @@ var skillMapRoyal = {
         "element": "passive",
         "personas": { "Satan": 98, "Yamata-no-Orochi": 66 }
     },
-    "Absorb Nuke": { "effect": "Absorb Nuclear attacks.", "element": "passive", "personas": { "Fafnir": 92 } },
+    "Absorb Nuke": { "effect": "Absorb nuke attacks.", "element": "passive", "personas": { "Fafnir": 92 } },
     "Absorb Phys": {
         "effect": "Absorb Phys attacks.",
         "element": "passive",
@@ -215,8 +215,8 @@ var skillMapRoyal = {
     },
     "Atomic Flare": {
         "cost": 4800,
-        "effect": "Deal severe Nuclear damage to 1 foe.",
-        "element": "nuclear",
+        "effect": "Deal severe nuke damage to 1 foe.",
+        "element": "nuke",
         "fuse": ["Bishamonten"],
         "personas": { "Asura-Ou": 0, "Fafnir": 88, "Orichalcum": 0 }
     },
@@ -511,8 +511,8 @@ var skillMapRoyal = {
     },
     "Cosmic Flare": {
         "cost": 5400,
-        "effect": "Deal severe Nuclear damage to all foes.",
-        "element": "nuclear",
+        "effect": "Deal severe nuke damage to all foes.",
+        "element": "nuke",
         "personas": { "Ardha": 0, "Fafnir": 0, "Michael": 92 }
     },
     "Counter": {
@@ -728,7 +728,7 @@ var skillMapRoyal = {
         "personas": { "Angel": 11, "Incubus": 9, "Koh-i-Noor": 0, "Shiisaa": 16, "Orpheus F": 15, "Orpheus F Picaro": 17 }
     },
     "Dodge Elec": {
-        "effect": "Double evasion rate against Electric attacks.",
+        "effect": "Double evasion rate against elec attacks.",
         "element": "passive",
         "personas": {
             "Agathion": 8,
@@ -752,7 +752,7 @@ var skillMapRoyal = {
         "personas": { "Koh-i-Noor": 0, "Koropokkuru": 11 }
     },
     "Dodge Nuke": {
-        "effect": "Double evasion rate against Nuclear attacks.",
+        "effect": "Double evasion rate against nuke attacks.",
         "element": "passive",
         "personas": { "Koh-i-Noor": 0 }
     },
@@ -836,25 +836,25 @@ var skillMapRoyal = {
         "personas": { "Arsene": 0, "Onmoraki": 0 }
     },
     "Elec Amp": {
-        "effect": "Strengthen Electric attacks by 50%.",
+        "effect": "Strengthen elec attacks by 50%.",
         "element": "passive",
         "fuse": ["Thunderbird"],
         "personas": { "Oberon": 72, "Odin": 89, "Thor": 66, "Yoshitsune": 92 }
     },
     "Elec Boost": {
-        "effect": "Strengthen Electric attacks by 25%.",
+        "effect": "Strengthen elec attacks by 25%.",
         "element": "passive",
         "personas": { "Atropos": 42, "Take-Minakata": 29, "Thunderbird": 38, "Yurlungur": 49 }
     },
     "Elec Break": {
         "cost": 600,
-        "effect": "Negate Electric resistances of all foes.",
+        "effect": "Negate elec resistances of all foes.",
         "element": "support",
         "personas": { "Atropos": 0, "Barong": 54, "Raja Naga": 0, "Yurlungur": 46 }
     },
     "Elec Wall": {
         "cost": 1800,
-        "effect": "Create a shield on 1 ally to reduce damage of Electric attacks for 3 turns.",
+        "effect": "Create a shield on 1 ally to reduce damage of elec attacks for 3 turns.",
         "element": "support",
         "personas": { "Ananta": 0, "Apsaras": 14, "Lachesis": 37, "Nekomata": 21 },
         "talk": "Waterside Nymph (Apsaras)"
@@ -923,7 +923,7 @@ var skillMapRoyal = {
         "personas": { "Dominion": 74, "Gabriel": 80 }
     },
     "Evade Elec": {
-        "effect": "Triple evasion rate against Electric attacks.",
+        "effect": "Triple evasion rate against elec attacks.",
         "element": "passive",
         "personas": { "Fortuna": 51, "Garuda": 55 }
     },
@@ -934,7 +934,7 @@ var skillMapRoyal = {
     },
     "Evade Ice": { "effect": "Triple evasion rate against Ice attacks.", "element": "passive", "personas": { "Surt": 86 } },
     "Evade Nuke": {
-        "effect": "Triple evasion rate against Nuclear attacks.",
+        "effect": "Triple evasion rate against nuke attacks.",
         "element": "passive",
         "personas": { "Oberon": 70, "Okuninushi": 57 }
     },
@@ -1083,23 +1083,23 @@ var skillMapRoyal = {
     "Frei": {
         "card": "CJ Theater",
         "cost": 400,
-        "effect": "Deal weak Nuclear damage to 1 foe.",
-        "element": "nuclear",
+        "effect": "Deal weak nuke damage to 1 foe.",
+        "element": "nuke",
         "personas": { "Makami": 0, "Shiisaa": 0, "Suzaku": 0 },
         "talk": "Rooftop Lion (Shiisaa)"
     },
     "Freidyne": {
         "cost": 1200,
-        "effect": "Deal heavy Nuclear damage to 1 foe.",
-        "element": "nuclear",
+        "effect": "Deal heavy nuke damage to 1 foe.",
+        "element": "nuke",
         "fuse": ["Thoth"],
         "personas": { "Ananta": 49, "Bishamonten": 0, "Emperor's Amulet": 0, "Lilith": 0, "Mithras": 45, "Titania": 0 },
         "talk": "Scandalous Queen (Titania)"
     },
     "Freila": {
         "cost": 800,
-        "effect": "Deal medium Nuclear damage to 1 foe.",
-        "element": "nuclear",
+        "effect": "Deal medium nuke damage to 1 foe.",
+        "element": "nuke",
         "personas": { "Ara Mitama": 0, "Phoenix": 0, "Stone of Scone": 0, "Thoth": 0 }
     },
     "Garu": {
@@ -1480,23 +1480,23 @@ var skillMapRoyal = {
     },
     "Mafrei": {
         "cost": 1000,
-        "effect": "Deal weak Nuclear damage to all foes.",
-        "element": "nuclear",
+        "effect": "Deal weak nuke damage to all foes.",
+        "element": "nuke",
         "fuse": ["Makami"],
         "personas": { "Makami": 17, "Regent": 0, "Suzaku": 19 },
         "talk": "Hunting Wolf Spirit (Makami)"
     },
     "Mafreidyne": {
         "cost": 2200,
-        "effect": "Deal heavy Nuclear damage to all foes.",
-        "element": "nuclear",
+        "effect": "Deal heavy nuke damage to all foes.",
+        "element": "nuke",
         "fuse": ["Titania"],
         "personas": { "Asura-Ou": 79, "Bishamonten": 69, "Crystal Skull": 0, "Lilith": 62, "Trumpeter": 0 }
     },
     "Mafreila": {
         "cost": 1600,
-        "effect": "Deal medium Nuclear damage to all foes.",
-        "element": "nuclear",
+        "effect": "Deal medium nuke damage to all foes.",
+        "element": "nuke",
         "personas": { "Ananta": 0, "Mithras": 0, "Orlov": 0, "Phoenix": 26 },
         "talk": "Dark Sun (Mithras)"
     },
@@ -1836,15 +1836,15 @@ var skillMapRoyal = {
     },
     "Mazio": {
         "cost": 1000,
-        "effect": "Deal weak Electric damage to all foes.",
-        "element": "electric",
+        "effect": "Deal weak elec damage to all foes.",
+        "element": "elec",
         "fuse": ["Agathion"],
         "personas": { "Ame-no-Uzume": 0, "Regent": 0 }
     },
     "Maziodyne": {
         "cost": 2200,
-        "effect": "Deal heavy Electric damage to all foes.",
-        "element": "electric",
+        "effect": "Deal heavy elec damage to all foes.",
+        "element": "elec",
         "fuse": ["Barong"],
         "personas": {
             "Barong": 57,
@@ -1862,8 +1862,8 @@ var skillMapRoyal = {
     "Mazionga": {
         "card": "Trial 30",
         "cost": 1600,
-        "effect": "Deal medium Electric damage to all foes.",
-        "element": "electric",
+        "effect": "Deal medium elec damage to all foes.",
+        "element": "elec",
         "fuse": ["Take-Minakata"],
         "personas": {
             "Atropos": 0,
@@ -2091,25 +2091,25 @@ var skillMapRoyal = {
         "talk": "Self-Infatuated Star (Narcissus)"
     },
     "Nuke Amp": {
-        "effect": "Strengthen Nuclear attacks by 50%.",
+        "effect": "Strengthen nuke attacks by 50%.",
         "element": "passive",
         "fuse": ["Mithras"],
         "personas": { "Bishamonten": 71, "Fafnir": 90, "Lilith": 65, "Titania": 60 }
     },
     "Nuke Boost": {
-        "effect": "Strengthen Nuclear attacks by 25%.",
+        "effect": "Strengthen nuke attacks by 25%.",
         "element": "passive",
         "personas": { "Ananta": 50, "Phoenix": 25 }
     },
     "Nuke Break": {
         "cost": 600,
-        "effect": "Negate Nuclear resistances of all foes.",
+        "effect": "Negate nuke resistances of all foes.",
         "element": "support",
         "personas": { "Mithras": 42 }
     },
     "Nuke Wall": {
         "cost": 1800,
-        "effect": "Create a shield on 1 ally to reduce damage of Nuclear attacks for 3 turns.",
+        "effect": "Create a shield on 1 ally to reduce damage of nuke attacks for 3 turns.",
         "element": "support"
     },
     "Null Bless": {
@@ -2139,7 +2139,7 @@ var skillMapRoyal = {
         "personas": { "Legion": 42, "Matador": 0 }
     },
     "Null Elec": {
-        "effect": "Impart immunity against Electric attacks.",
+        "effect": "Impart immunity against elec attacks.",
         "element": "passive",
         "personas": { "Barong": 55 }
     },
@@ -2155,7 +2155,7 @@ var skillMapRoyal = {
         "element": "passive",
         "personas": { "Kushinada-Hime": 48, "Parvati": 61, "Sui-Ki": 26 }
     },
-    "Null Nuke": { "effect": "Impart immunity against Nuclear attacks.", "element": "passive" },
+    "Null Nuke": { "effect": "Impart immunity against nuke attacks.", "element": "passive" },
     "Null Phys": {
         "effect": "Impart immunity against Phys attacks.",
         "element": "passive",
@@ -2409,7 +2409,7 @@ var skillMapRoyal = {
         "personas": { "Lucifer": 97, "Mother Harlot": 88 }
     },
     "Repel Curse": { "effect": "Repel Curse attacks.", "element": "passive", "personas": { "Sandalphon": 78 } },
-    "Repel Elec": { "effect": "Repel Electric attacks.", "element": "passive", "fuse": ["Mot"], "personas": { "Mot": 77 } },
+    "Repel Elec": { "effect": "Repel elec attacks.", "element": "passive", "fuse": ["Mot"], "personas": { "Mot": 77 } },
     "Repel Fire": {
         "effect": "Repel Fire attacks.",
         "element": "passive",
@@ -2422,7 +2422,7 @@ var skillMapRoyal = {
         "personas": { "Beelzebub": 91 }
     },
     "Repel Nuke": {
-        "effect": "Repel Nuclear attacks.",
+        "effect": "Repel nuke attacks.",
         "element": "passive",
         "fuse": ["Lilith"],
         "personas": { "Seiryu": 63, "Uriel": 83 }
@@ -2457,7 +2457,7 @@ var skillMapRoyal = {
         "element": "passive",
         "personas": { "Ippon-Datara": 0, "Saki Mitama": 10 }
     },
-    "Resist Elec": { "effect": "Reduce damage from Electric attacks.", "element": "passive" },
+    "Resist Elec": { "effect": "Reduce damage from elec attacks.", "element": "passive" },
     "Resist Fear": {
         "effect": "Reduce susceptibility to Fear.",
         "element": "passive",
@@ -2470,7 +2470,7 @@ var skillMapRoyal = {
         "personas": { "Genbu": 9, "Hua Po": 12 }
     },
     "Resist Ice": { "effect": "Reduce damage from Ice attacks.", "element": "passive" },
-    "Resist Nuke": { "effect": "Reduce damage from Nuclear attacks.", "element": "passive" },
+    "Resist Nuke": { "effect": "Reduce damage from nuke attacks.", "element": "passive" },
     "Resist Phys": { "effect": "Reduce damage from Phys attacks.", "element": "passive" },
     "Resist Psy": { "effect": "Reduce damage from Psy attacks.", "element": "passive", "personas": { "Ganesha": 56 } },
     "Resist Rage": { "effect": "Reduce susceptibility to Rage.", "element": "passive" },
@@ -2850,8 +2850,8 @@ var skillMapRoyal = {
     },
     "Thunder Reign": {
         "cost": 4800,
-        "effect": "Deal severe Electric damage to 1 foe.",
-        "element": "electric",
+        "effect": "Deal severe elec damage to 1 foe.",
+        "element": "elec",
         "fuse": ["Dionysus"],
         "personas": { "Odin": 0, "Orichalcum": 0 }
     },
@@ -2936,8 +2936,8 @@ var skillMapRoyal = {
     },
     "Wild Thunder": {
         "cost": 5400,
-        "effect": "Deal severe Electric damage to all foes.",
-        "element": "electric",
+        "effect": "Deal severe elec damage to all foes.",
+        "element": "elec",
         "personas": { "Odin": 86, "Thor": 71 }
     },
     "Wind Amp": {
@@ -2975,14 +2975,14 @@ var skillMapRoyal = {
     },
     "Zio": {
         "cost": 400,
-        "effect": "Deal weak Electric damage to 1 foe.",
-        "element": "electric",
+        "effect": "Deal weak elec damage to 1 foe.",
+        "element": "elec",
         "personas": { "Agathion": 7, "Pixie": 0 }
     },
     "Ziodyne": {
         "cost": 1200,
-        "effect": "Deal heavy Electric damage to 1 foe.",
-        "element": "electric",
+        "effect": "Deal heavy elec damage to 1 foe.",
+        "element": "elec",
         "fuse": ["Atropos"],
         "personas": {
             "Atropos": 44,
@@ -3003,8 +3003,8 @@ var skillMapRoyal = {
     },
     "Zionga": {
         "cost": 800,
-        "effect": "Deal medium Electric damage to 1 foe.",
-        "element": "electric",
+        "effect": "Deal medium elec damage to 1 foe.",
+        "element": "elec",
         "personas": {
             "Hariti": 0,
             "Naga": 0,

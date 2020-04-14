@@ -1,5 +1,6 @@
 ///<reference path="PersonaBuilder.ts"/>
 ///<reference path="../data/PersonaData.ts"/>
+///<reference path="DataUtil.ts"/>
 ///<reference path="App.ts"/>
 
 /**
@@ -17,6 +18,7 @@ class BuilderController {
 		this.$scope = $scope
 		this.$scope.chains = []
 		this.$scope.children = []
+		this.$scope.GLOBAL_IS_ROYAL = GLOBAL_IS_ROYAL
 
 		// set the default sort param
 		$scope.sortBy = 'level'
@@ -25,13 +27,13 @@ class BuilderController {
 
 		// set default inputs
 		$scope.targetPersona = null
+		$scope.targetTrait = null
 		$scope.inputSkills = []
 
 		// bring arrays for searching into scope
 		$scope.skillNames = skillNames
-		$scope.customStandardPersonaeNames = customPersonaeNames
-
-		this.$scope.builder = new PersonaBuilder(new FusionCalculator(customPersonaeByArcana));
+		$scope.customPersonaeNames = customPersonaeNames
+		$scope.traitList = traitList
 
 		/**
 		 * Clears input and resets table
@@ -42,6 +44,7 @@ class BuilderController {
 			this.$scope.children = []
 			this.$scope.targetPersona = null
 			this.$scope.maxLevel = null
+			this.$scope.targetTrait = null
 			this.$scope.$broadcast('angucomplete-alt:clearInput')
 		}
 
@@ -51,17 +54,28 @@ class BuilderController {
 		 */
 		this.$scope.build = () => {
 			let searchSkills = []
-			//FIXME: should these be strings, or skill objects?
-			for (let input of this.$scope.inputSkills) {
+			for (let input of this.$scope.inputSkills)
 				searchSkills.push(input.originalObject.name)
+			if (searchSkills.length === 0) {
+				console.log("Please enter some values")
+				return
 			}
-			//targetPersona is null by default, but if it was specified by the user, pass it to function
-			//	again, since we're using angucomplete-alt we need to pull the string from their object
+
 			let targetPersona = null
-			if (this.$scope.targetPersona != null) {
+			if (this.$scope.targetPersona != null)
 				targetPersona = this.$scope.targetPersona.originalObject.name
-			}
-			this.$scope.chains = this.$scope.builder.getFusionTree(searchSkills, targetPersona, this.$scope.maxLevel)
+			let targetTrait = null
+			if (this.$scope.targetTrait != null)
+				targetTrait = this.$scope.targetTrait.originalObject.name
+
+			let calc = new FusionCalculator(customPersonaeByArcana)
+			let builder = new PersonaBuilder(calc, searchSkills, targetPersona, targetTrait)
+
+			if (this.$scope.maxLevel != null)
+				builder.setMaxLevel(this.$scope.maxLevel)
+
+
+			this.$scope.chains = builder.getFusionTree()
 			this.$scope.children = this.getChildren(this.$scope.chains)
 			//add the info to the service so we can pass it to the next controller
 			ChainService.setChains(this.$scope.chains)
@@ -78,7 +92,7 @@ class BuilderController {
 	 */
 	private getChildren(chains: Chain[][]): FirstLink[] {
 		let result: FirstLink[] = []
-		for (let chain of chains){
+		for (let chain of chains) {
 			let add: FirstLink = chain[0].child
 			add.fusionNum = chain.length
 			result.push(add)
@@ -88,12 +102,9 @@ class BuilderController {
 
 	private getSortValue(item) {
 		let sortBy = this.$scope.sortBy
-		if (sortBy === "arcana") {
+		if (sortBy === "arcana")
 			return item.arcana + (item.level >= 10 ? item.level : ("0" + item.level))
-		}
-		else {
-			return item[sortBy]
-		}
+		return item[sortBy]
 	}
 }
 
@@ -102,6 +113,6 @@ class BuilderController {
  * by their length with ng-repeat
  */
 interface FirstLink extends PersonaData {
-	fusionNum?: number		
+	fusionNum?: number
 }
 

@@ -133,14 +133,6 @@ const skillNames: string[] = (() => {
 	return arr;
 })();
 
-const skillNamesRoyal: string[] = (() => {
-	let arr = [];
-	for (let key in skillMap) {
-		arr.push({ name: key });
-	}
-	return arr;
-})();
-
 //TODO: Removes any skills from unplayable-personas
 const skillList: SkillData[] = (() => {
 	let arr = [];
@@ -172,8 +164,6 @@ const skillList: SkillData[] = (() => {
 	return arr;
 })();
 
-
-//TODO: Removes any skills from unplayable-personas and creates the skill table for Royal Version
 const skillListRoyal: SkillData[] = (() => {
 	let arr = [];
 	for (let key in skillMap) {
@@ -204,6 +194,25 @@ const skillListRoyal: SkillData[] = (() => {
 	return arr;
 })();
 
+const traitList: SkillData[] = (() => {
+	if (!GLOBAL_IS_ROYAL) { return null }
+	let result: SkillData[] = []
+	for (let skill in skillMap) {
+		if (skillMap[skill].element === "trait") {
+			result.push(skillMap[skill])
+		}
+	}
+	return result
+})()
+
+function getTrait(trait: string): SkillData {
+	for (let skill in skillMap) {
+		if (skillMap[skill].name === trait)
+			return skillMap[skill]
+	}
+	return null
+}
+
 /**
  * Persona by arcana based on customPersonaList
  */
@@ -232,6 +241,8 @@ function getCustomPersona(name: string): PersonaData {
 	}
 	return null
 }
+
+
 
 const arcanaMap = (() => {
 	let map = {};

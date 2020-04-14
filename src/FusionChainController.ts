@@ -23,10 +23,11 @@ class FusionChainController {
 		}
 		this.$scope.persona = personaMap[personaName]
 		this.$scope.rootPersona = getRootPersonae(this.$scope.chain)
-		
+
 		// Note: skillList are skills in a sorted list for displaying with Angular.
 		// It's different from the existing skills property which is a map.
 		this.$scope.persona.skillList = getSkills(personaName);
+		this.$scope.trait = skillMap[this.$scope.persona.trait]
 
 		let inheritedSkillNames = []
 		for (let link of this.$scope.chain) {
@@ -44,6 +45,7 @@ class FusionChainController {
 		$scope.sortBy = 'level'
 		$scope.sortReverse = false
 		$scope.sortFunc = this.getSortValue.bind(this)
+		$scope.GLOBAL_IS_ROYAL = GLOBAL_IS_ROYAL
 
 		// stats
 		let compediumEntry = personaMap[personaName];

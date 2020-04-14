@@ -12,6 +12,7 @@ var PersonaController = /** @class */ (function () {
         this.$scope.Math = Math;
         this.$scope.personaName = personaName;
         this.$scope.persona = personaMap[personaName];
+        this.$scope.trait = skillMap[this.$scope.persona.trait];
         if (!this.$scope.persona)
             return;
         var calc = new FusionCalculator(customPersonaeByArcana);

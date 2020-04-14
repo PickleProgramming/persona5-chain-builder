@@ -1,5 +1,6 @@
 ///<reference path="PersonaBuilder.ts"/>
 ///<reference path="../data/PersonaData.ts"/>
+///<reference path="DataUtil.ts"/>
 ///<reference path="App.ts"/>
 /**
  * TODO: Refactor to ChainBuilder or something like that
@@ -14,17 +15,19 @@ var BuilderController = /** @class */ (function () {
         this.$scope = $scope;
         this.$scope.chains = [];
         this.$scope.children = [];
+        this.$scope.GLOBAL_IS_ROYAL = GLOBAL_IS_ROYAL;
         // set the default sort param
         $scope.sortBy = 'level';
         $scope.sortReverse = false;
         $scope.sortFunc = this.getSortValue.bind(this);
         // set default inputs
         $scope.targetPersona = null;
+        $scope.targetTrait = null;
         $scope.inputSkills = [];
         // bring arrays for searching into scope
         $scope.skillNames = skillNames;
-        $scope.customStandardPersonaeNames = customPersonaeNames;
-        this.$scope.builder = new PersonaBuilder(new FusionCalculator(customPersonaeByArcana));
+        $scope.customPersonaeNames = customPersonaeNames;
+        $scope.traitList = traitList;
         /**
          * Clears input and resets table
          */
@@ -34,6 +37,7 @@ var BuilderController = /** @class */ (function () {
             _this.$scope.children = [];
             _this.$scope.targetPersona = null;
             _this.$scope.maxLevel = null;
+            _this.$scope.targetTrait = null;
             _this.$scope.$broadcast('angucomplete-alt:clearInput');
         };
         /**
@@ -42,18 +46,25 @@ var BuilderController = /** @class */ (function () {
          */
         this.$scope.build = function () {
             var searchSkills = [];
-            //FIXME: should these be strings, or skill objects?
             for (var _i = 0, _a = _this.$scope.inputSkills; _i < _a.length; _i++) {
                 var input = _a[_i];
                 searchSkills.push(input.originalObject.name);
             }
-            //targetPersona is null by default, but if it was specified by the user, pass it to function
-            //	again, since we're using angucomplete-alt we need to pull the string from their object
-            var targetPersona = null;
-            if (_this.$scope.targetPersona != null) {
-                targetPersona = _this.$scope.targetPersona.originalObject.name;
+            if (searchSkills.length === 0) {
+                console.log("Please enter some values");
+                return;
             }
-            _this.$scope.chains = _this.$scope.builder.getFusionTree(searchSkills, targetPersona, _this.$scope.maxLevel);
+            var targetPersona = null;
+            if (_this.$scope.targetPersona != null)
+                targetPersona = _this.$scope.targetPersona.originalObject.name;
+            var targetTrait = null;
+            if (_this.$scope.targetTrait != null)
+                targetTrait = _this.$scope.targetTrait.originalObject.name;
+            var calc = new FusionCalculator(customPersonaeByArcana);
+            var builder = new PersonaBuilder(calc, searchSkills, targetPersona, targetTrait);
+            if (_this.$scope.maxLevel != null)
+                builder.setMaxLevel(_this.$scope.maxLevel);
+            _this.$scope.chains = builder.getFusionTree();
             _this.$scope.children = _this.getChildren(_this.$scope.chains);
             //add the info to the service so we can pass it to the next controller
             ChainService.setChains(_this.$scope.chains);
@@ -79,12 +90,9 @@ var BuilderController = /** @class */ (function () {
     };
     BuilderController.prototype.getSortValue = function (item) {
         var sortBy = this.$scope.sortBy;
-        if (sortBy === "arcana") {
+        if (sortBy === "arcana")
             return item.arcana + (item.level >= 10 ? item.level : ("0" + item.level));
-        }
-        else {
-            return item[sortBy];
-        }
+        return item[sortBy];
     };
     return BuilderController;
 }());

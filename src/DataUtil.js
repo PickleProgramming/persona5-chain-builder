@@ -122,13 +122,6 @@ var skillNames = (function () {
     }
     return arr;
 })();
-var skillNamesRoyal = (function () {
-    var arr = [];
-    for (var key in skillMap) {
-        arr.push({ name: key });
-    }
-    return arr;
-})();
 //TODO: Removes any skills from unplayable-personas
 var skillList = (function () {
     var arr = [];
@@ -159,7 +152,6 @@ var skillList = (function () {
     }
     return arr;
 })();
-//TODO: Removes any skills from unplayable-personas and creates the skill table for Royal Version
 var skillListRoyal = (function () {
     var arr = [];
     for (var key in skillMap) {
@@ -189,6 +181,25 @@ var skillListRoyal = (function () {
     }
     return arr;
 })();
+var traitList = (function () {
+    if (!GLOBAL_IS_ROYAL) {
+        return null;
+    }
+    var result = [];
+    for (var skill in skillMap) {
+        if (skillMap[skill].element === "trait") {
+            result.push(skillMap[skill]);
+        }
+    }
+    return result;
+})();
+function getTrait(trait) {
+    for (var skill in skillMap) {
+        if (skillMap[skill].name === trait)
+            return skillMap[skill];
+    }
+    return null;
+}
 /**
  * Persona by arcana based on customPersonaList
  */
