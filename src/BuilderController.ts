@@ -19,6 +19,7 @@ class BuilderController {
 		this.$scope.chains = []
 		this.$scope.children = []
 		this.$scope.GLOBAL_IS_ROYAL = GLOBAL_IS_ROYAL
+		this.$scope.errors = ["Some entries may take a while to calculate."]
 
 		// set the default sort param
 		$scope.sortBy = 'level'
@@ -46,6 +47,7 @@ class BuilderController {
 			this.$scope.maxLevel = null
 			this.$scope.targetTrait = null
 			this.$scope.$broadcast('angucomplete-alt:clearInput')
+			this.$scope.errors[0] = "Some entries may take some time to calculate."
 		}
 
 		/**
@@ -53,11 +55,12 @@ class BuilderController {
 		 * Because of how anucomplete-alt handles entries we must get the name from their object
 		 */
 		this.$scope.build = () => {
+			this.$scope.errors[0] = "Calculating..."
 			let searchSkills = []
 			for (let input of this.$scope.inputSkills)
 				searchSkills.push(input.originalObject.name)
 			if (searchSkills.length === 0) {
-				console.log("Please enter some values")
+				$scope.errors[0] = "Please enter some values."
 				return
 			}
 
@@ -69,18 +72,29 @@ class BuilderController {
 				targetTrait = this.$scope.targetTrait.originalObject.name
 
 			let calc = new FusionCalculator(customPersonaeByArcana)
-			let builder = new PersonaBuilder(calc, searchSkills, targetPersona, targetTrait)
+			let builder = new PersonaBuilder(calc, searchSkills, targetPersona, this.$scope.errors, targetTrait)
 
 			if (this.$scope.maxLevel != null)
 				builder.setMaxLevel(this.$scope.maxLevel)
-
-
 			this.$scope.chains = builder.getFusionTree()
 			this.$scope.children = this.getChildren(this.$scope.chains)
 			//add the info to the service so we can pass it to the next controller
 			ChainService.setChains(this.$scope.chains)
+			this.$scope.errors[0] = this.$scope.chains.length + " results found. (If this is 0 something is wrong with the script)"
+			
+		}
+
+		this.$scope.inputTestValues = () => {
+			this.$scope.inputSkills[0] = {originalObject: {name: "Miracle Punch"}}
+			this.$scope.inputSkills[1] = {originalObject: {name: "Apt Pupil"}}
+			this.$scope.inputSkills[2] = {originalObject: {name: "Regenerate 3"}}
+			this.$scope.inputSkills[3] = {originalObject: {name: "Invigorate 3"}}
+
+			this.$scope.errors[0] = "Entered test values."
 		}
 	}
+
+
 
 	/**
 	 * function for returning each child at the beginning of every chain

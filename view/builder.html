@@ -1,3 +1,6 @@
+<div>
+	You must click on the skill that pops up, just typing it won't work.
+</div>
 <!-- TODO: Do not allow entries not clicked from the list to be allowed -->
 <div class="row">
 	<div class="col">
@@ -118,14 +121,16 @@
 				<!-- Preferred Persona -->
 				<!-- TODO: Do not allow entries not clicked from the list to be allowed -->
 				<div angucomplete-alt id="targetTrait" placeholder="Trait (Optional)" maxlength="50" pause="100"
-					selected-object="targetTrait" local-data="traitList" search-fields="name" title-field="name"
-					minlength="1" input-class="form-control form-control-small" match-class="highlight">
+					selected-object="targetTrait" local-data="traitList" search-fields="name" title-field="name" minlength="1"
+					input-class="form-control form-control-small" match-class="highlight">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
+<div class="errors">
+	{{errors[0]}}
+</div>
 <table class="ui celled striped structured table">
 	<tbody>
 		<tr>
@@ -153,6 +158,7 @@
 
 <button id="buildButton" class="ui button" ng-click="build()">Build</button>
 <button id="resetButton" class="ui button" ng-click="clearInput()">Reset</button>
+<button id="testButton" class="ui button" ng-click="inputTestValues()">Test</button>
 
 <table id="list" cellspacing="0" class="ui table striped sortable unstackable" sticky-table>
 	<thead>

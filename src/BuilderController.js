@@ -16,6 +16,7 @@ var BuilderController = /** @class */ (function () {
         this.$scope.chains = [];
         this.$scope.children = [];
         this.$scope.GLOBAL_IS_ROYAL = GLOBAL_IS_ROYAL;
+        this.$scope.errors = ["Some entries may take a while to calculate."];
         // set the default sort param
         $scope.sortBy = 'level';
         $scope.sortReverse = false;
@@ -39,19 +40,21 @@ var BuilderController = /** @class */ (function () {
             _this.$scope.maxLevel = null;
             _this.$scope.targetTrait = null;
             _this.$scope.$broadcast('angucomplete-alt:clearInput');
+            _this.$scope.errors[0] = "Some entries may take some time to calculate.";
         };
         /**
          * chains lists of fusion chains for the specified persona
          * Because of how anucomplete-alt handles entries we must get the name from their object
          */
         this.$scope.build = function () {
+            _this.$scope.errors[0] = "Calculating...";
             var searchSkills = [];
             for (var _i = 0, _a = _this.$scope.inputSkills; _i < _a.length; _i++) {
                 var input = _a[_i];
                 searchSkills.push(input.originalObject.name);
             }
             if (searchSkills.length === 0) {
-                console.log("Please enter some values");
+                $scope.errors[0] = "Please enter some values.";
                 return;
             }
             var targetPersona = null;
@@ -61,13 +64,21 @@ var BuilderController = /** @class */ (function () {
             if (_this.$scope.targetTrait != null)
                 targetTrait = _this.$scope.targetTrait.originalObject.name;
             var calc = new FusionCalculator(customPersonaeByArcana);
-            var builder = new PersonaBuilder(calc, searchSkills, targetPersona, targetTrait);
+            var builder = new PersonaBuilder(calc, searchSkills, targetPersona, _this.$scope.errors, targetTrait);
             if (_this.$scope.maxLevel != null)
                 builder.setMaxLevel(_this.$scope.maxLevel);
             _this.$scope.chains = builder.getFusionTree();
             _this.$scope.children = _this.getChildren(_this.$scope.chains);
             //add the info to the service so we can pass it to the next controller
             ChainService.setChains(_this.$scope.chains);
+            _this.$scope.errors[0] = _this.$scope.chains.length + " results found. (If this is 0 something is wrong with the script)";
+        };
+        this.$scope.inputTestValues = function () {
+            _this.$scope.inputSkills[0] = { originalObject: { name: "Miracle Punch" } };
+            _this.$scope.inputSkills[1] = { originalObject: { name: "Apt Pupil" } };
+            _this.$scope.inputSkills[2] = { originalObject: { name: "Regenerate 3" } };
+            _this.$scope.inputSkills[3] = { originalObject: { name: "Invigorate 3" } };
+            _this.$scope.errors[0] = "Entered test values.";
         };
     }
     /**

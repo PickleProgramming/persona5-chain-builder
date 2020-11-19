@@ -10,6 +10,23 @@
  * Persona Builder. Provides method for determining the list 
  * of possible skills any persona could inherit
  * 
+ * Testing 1:
+ * Miracle Punch
+ * Apt Pupil
+ * Auto-Mataru
+ * Regenerate 3
+ * Invigorate 3
+ * Arms Master
+ * Ali Dance
+ * 
+ * Testing 2:
+ * Spell Master
+ * Die For Me!
+ * Auto-Mataru
+ * Regenerate 3
+ * Invigorate 3
+ * Mudo Boost
+ * Ali Dance
  * Created by PickleProgramming on 05-Apr-20
  */
 class PersonaBuilder {
@@ -17,47 +34,55 @@ class PersonaBuilder {
 	private calc;
 	private inputSkills: string[]
 	private persona: PersonaData = null
+	private updates: string[]
 	private inputTrait: SkillData = null
 
 	private maxLevel: number = 99
 	private deep: boolean = false
-	private depth: number = 3
+	private depth: number = 4
 	private limit: number = 10
 
-	constructor(calc: FusionCalculator, inputSkills: string[], personaName: string, inputTrait?: string) {
+	constructor(calc: FusionCalculator, inputSkills: string[], personaName: string, updates: string[], inputTrait?: string) {
 		this.calc = calc;
 		this.inputSkills = inputSkills
 		this.persona = getCustomPersona(personaName)
+		this.updates = updates
 		if (inputTrait != undefined)
 			this.inputTrait = getTrait(inputTrait)
 	}
 
 	/**
- 	 * a set of possible fusion paths for either the given persona with the given skills
+		 * a set of possible fusion paths for either the given persona with the given skills
 	 * or ANY persona with the given skills is no persona is specified
- 	 * @param personaName {string} persona to fuse to, if null will check ALL persona
- 	 * @param inputSkills skills required for the persona
+		 * @param personaName {string} persona to fuse to, if null will check ALL persona
+		 * @param inputSkills skills required for the persona
 	 * @param inputTrait should only be passed in royal version, the trait you would like the persona to have
 	 * @returns {Chain[][]} a list of possible fusion chains for the desired persona 
 	 * where result[x][y] is of the type Chain, result[x][0].child === @param persona,
- 	 *  and result[x][0].inheritance === @param skills 
- 	 */
+		 *  and result[x][0].inheritance === @param skills 
+		 */
 	public getFusionTree(): Chain[][] {
 
 		let unique = this.checkUnique()
 
 		//If a persona was passed to the constructor
 		if (this.persona != null) {
-			if (!unique.possible)
-				throw new Error("you entered unique skills that " + this.persona.name + " cannot learn")
-			if (!this.checkInherit(this.inputSkills, this.persona))
-				throw new Error("you entered skills that " + this.persona.name + " cannot inherit")
+			if (!unique.possible) {
+				this.updates[0] = "You entered unique skills that " + this.persona.name + " cannot learn."
+				return
+			}
+			if (!this.checkInherit(this.inputSkills, this.persona)) {
+				this.updates[0] = "You entered skills that " + this.persona.name + " cannot inherit."
+				return
+			}
 			return this.getPersonaTree(this.inputSkills, this.persona)
 		}
 
 		//If a persona was NOT passed to the constructor
-		if (!unique.possible)
-			throw new Error("you entered a combination of unique skills that no persona can learn")
+		if (!unique.possible) {
+			this.updates[0] = "You entered a combination of unique skills that no persona can learn."
+			return
+		}
 		if (unique.persona != null)
 			return this.getPersonaTree(this.inputSkills, unique.persona, this.inputTrait)
 		return this.getAnyTree()
@@ -136,24 +161,31 @@ class PersonaBuilder {
 	}
 
 	/**
- 	 * a set of possible fusion paths for the given persona with the given skills
- 	 * @param personaName {string} persona to fuse to, if null will check ALL persona
- 	 * @param inputSkills skills required for the persona
-	 * @param inputTrait should only be passed in royal version, the trait you would like the persona to have
-	 * @returns {Chain[][]} a list of possible fusion chains for the desired persona 
-	 * where result[x][y] is of the type Chain, result[x][0].child === @param persona,
- 	 *  and result[x][0].inheritance === @param skills 
- 	 */
+		* a set of possible fusion paths for the given persona with the given skills
+		* @param personaName {string} persona to fuse to, if null will check ALL persona
+		* @param inputSkills skills required for the persona
+		* @param inputTrait should only be passed in royal version, the trait you would like the persona to have
+		* @returns {Chain[][]} a list of possible fusion chains for the desired persona 
+		* where result[x][y] is of the type Chain, result[x][0].child === @param persona,
+		*  and result[x][0].inheritance === @param skills 
+		*/
 	private getPersonaTree(inputSkills: string[], targetPersona: PersonaData, inputTrait?: SkillData): Chain[][] {
 		//Checks
-		if (targetPersona === null)
-			throw new Error(targetPersona.name + " not found, make sure your DLC setttings are correct")
-		if (targetPersona.level > this.maxLevel)
-			throw new Error(targetPersona.name + " exceeds your max level")
-		if (!this.isPossible(targetPersona, inputSkills))
-			throw new Error("fusion is not possible without skill cards or hangings")
-		if (this.filterSkills(targetPersona, inputSkills).length === 0)
-			throw new Error(targetPersona.name + " already learns all these skills at your level")
+		if (targetPersona === null) {
+			this.updates[0] = targetPersona.name + " not found, make sure your DLC setttings are correct."
+			return
+		}
+		if (targetPersona.level > this.maxLevel) {
+			this.updates[0] = "Fusion is not possible without skill cards or hangings. Try taking out some skills you could add through those other methods."
+			return
+		}
+		if (!this.isPossible(targetPersona, inputSkills)) {
+			this.updates[0] = "Fusion is not possible without skill cards or hangings. Try taking out some skills you could add through those other methods."
+			return
+		}
+		if (this.filterSkills(targetPersona, inputSkills).length === 0) {
+			this.updates[0] = targetPersona.name + " already learns all these skills at your level."
+		}
 		this.deep = true
 
 		let result: Chain[][] = []
@@ -168,14 +200,16 @@ class PersonaBuilder {
 	 * should not be used with unique skills as it will not bother with any special fusions
 	 * @param inputSkills skills required for the persona
 	 * @param inputTrait should only be passed in royal version, the trait you would like the persona to have
-   * @returns {Chain[][]} a list of possible fusion chains for the desired persona 
-   * where result[x][y] is of the type Chain, result[x][0].child === @param persona,
+	 * @returns {Chain[][]} a list of possible fusion chains for the desired persona 
+	 * where result[x][y] is of the type Chain, result[x][0].child === @param persona,
 	 *  and result[x][0].inheritance === @param skills 
 	 */
 	private getAnyTree(): Chain[][] {
 		let result: Chain[][] = []
 		let i: number = 0
 		let sortedPersonae: PersonaData[] = this.sortPossiblePersona(customPersonaeList, this.inputSkills, this.inputTrait)
+		if (sortedPersonae.length === 0)
+			this.updates[0] = "Fusion is not possible without skill cards or hangings. Try taking out some skills you could add through those other methods."
 		while (i < sortedPersonae.length) {
 			let persona: PersonaData = sortedPersonae[i]
 			let searchSkills: string[] = this.filterSkills(persona, this.inputSkills)
@@ -287,8 +321,10 @@ class PersonaBuilder {
 			for (let skill in persona.skills) {
 				if (_.indexOf(inputSkills, skill) > -1) {
 					personaeWeight[personaeWeight.length - 1].weight += 1
-					if (personaeWeight[personaeWeight.length - 1].weight === skillsNeeded && hasTrait)
-						throw new Error(persona.name + " already learns all the skills you need at your level")
+					if (personaeWeight[personaeWeight.length - 1].weight === skillsNeeded && hasTrait) {
+						this.updates[0] = persona.name + " already learns all the skills you need at your level."
+						return
+					}
 				}
 			}
 		}
@@ -316,7 +352,7 @@ class PersonaBuilder {
 	 * @param inputTrait the trait you would like the persona to have
 	 * @param recurCount current recursive depth
 	 * @returns {Chain[]} a single fusion chain in the form of a Chain[] where result[0].child === @param persona,
- 	 *  and result[0].inheritance === @param skills
+		 *  and result[0].inheritance === @param skills
 	 * 	null if there are no efficent fusion chains
 	 */
 	private getFusionChain(persona: PersonaData, inputSkills: string[], inputTrait?: SkillData, recurCount?: number): Chain[] {
@@ -337,6 +373,8 @@ class PersonaBuilder {
 
 		//Check all the immediate fusionTo recipes for any of the desired skills
 		for (let recipe of recipes) {
+			//update the output
+			this.updates[0] = this.buildUpdate(recipe)
 			//skip any recipes that have sources that exceed max level
 			let skip: boolean = false
 			for (let source of recipe.sources)
@@ -346,7 +384,6 @@ class PersonaBuilder {
 				}
 			if (skip)
 				continue
-
 			//Check if we have the desired trait
 			let gotTrait: boolean = false
 			try {
@@ -371,9 +408,11 @@ class PersonaBuilder {
 						}
 				//Check if we've found any skills
 				if (couldLearn.length > 0) {
+					//Make sure the child can inherit all the skills we want
+					if (!this.checkInherit(searchSkills, recipe.result))
+						continue
 					//Check if we've learned all the desired skills:
-					let check = _.isEqual(couldLearn[couldLearn.length - 1], searchSkills)
-					if (check) {
+					if (_.isEqual(couldLearn[couldLearn.length - 1], searchSkills)) {
 						if (inputTrait != null)
 							if (gotTrait)
 								return [{
@@ -416,6 +455,8 @@ class PersonaBuilder {
 					let searchSkills = _.difference(inputSkills, couldLearn[i])
 					let recur = this.getFusionChain(parent, searchSkills, inputTrait, recurCount + 1)
 					if (recur != null) {
+						if (!this.checkInherit(searchSkills, possibilities[i].result))
+							continue
 						let chain: Chain
 						if (inputTrait != null) {
 							if (chain.trait != inputTrait.name)
@@ -470,6 +511,8 @@ class PersonaBuilder {
 					recur = this.getFusionChain(parent, searchSkills, null, recurCount + 1)
 				if (recur === null)
 					continue
+				if (!this.checkInherit(searchSkills, recipes[i].result))
+					continue
 
 				let chain: Chain
 				if (gotTrait)
@@ -515,6 +558,13 @@ class PersonaBuilder {
 		if (trait != undefined && !hasTrait)
 			return false
 		let check = _.difference(skills, inheritance)
+		
+		//filter out skills the end child already knows
+		let innate: string[] = []
+		for (let skillName in chain[0].child.skills)
+			innate.push(skillName)
+		check = _.difference(check, innate)
+		
 		if (check.length === 0)
 			return true
 		return false
@@ -596,6 +646,23 @@ class PersonaBuilder {
 			}
 		}
 		return chains
+	}
+
+	/**
+	 * Builds an output string to update the user on what
+	 *  the algorithm is doing
+	 * @param recipe current recipe being calculated
+	 * @returns string to be printed on webpage or in log
+	 */
+	private buildUpdate(recipe: Recipe): string {
+		let ret = "Fusing "
+		for (let i = 0; i < recipe.sources.length; i++) {
+			if (i == recipe.sources.length - 1)
+				ret += "and " + recipe.sources[i].name + "... "
+			else
+				ret += recipe.sources[i].name + ", "
+		}
+		return ret
 	}
 
 	public setMaxLevel(maxLevel: number): void {
